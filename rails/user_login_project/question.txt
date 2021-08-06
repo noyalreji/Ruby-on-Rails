@@ -1,0 +1,78 @@
+2.3.1 :007 > users = User.first
+  User Load (2.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address | age | created_at              | updated_at              |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| 1  | Jake       | Thompson  |               |     | 2021-08-05 05:55:43 UTC | 2021-08-05 05:55:43 UTC |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+1 row in set
+2.3.1 :008 > users = User.last
+  User Load (1.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address | age | created_at              | updated_at              |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| 4  | Kbson      | Kisssslo  | bson@gma.com  | 23  | 2021-08-05 06:33:54 UTC | 2021-08-05 06:33:54 UTC |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+1 row in set
+2.3.1 :009 > users = User.order(first_name: :desc)
+  User Load (4.9ms)  SELECT "users".* FROM "users"  ORDER BY "users"."first_name" DESC
++----+------------+-----------+----------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address  | age | created_at              | updated_at              |
++----+------------+-----------+----------------+-----+-------------------------+-------------------------+
+| 4  | Kbson      | Kisssslo  | bson@gma.com   | 23  | 2021-08-05 06:33:54 UTC | 2021-08-05 06:33:54 UTC |
+| 2  | Jobson     | Kilo      | jobson@gma.com | 20  | 2021-08-05 06:21:38 UTC | 2021-08-05 06:21:38 UTC |
+| 1  | Jake       | Thompson  |                |     | 2021-08-05 05:55:43 UTC | 2021-08-05 05:55:43 UTC |
+| 3  | Hunter     | Low       | son@gma.com    | 30  | 2021-08-05 06:24:13 UTC | 2021-08-05 06:24:13 UTC |
++----+------------+-----------+----------------+-----+-------------------------+-------------------------+
+4 rows in set
+2.3.1 :010 > user = User.find(3)
+  User Load (4.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address | age | created_at              | updated_at              |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| 3  | Hunter     | Low       | son@gma.com   | 30  | 2021-08-05 06:24:13 UTC | 2021-08-05 06:24:13 UTC |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+1 row in set
+2.3.1 :011 > user.last_name = "Bee"
+ => "Bee"
+2.3.1 :012 > user.save
+   (0.1ms)  begin transaction
+  User Exists (1.1ms)  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email_address") = LOWER('son@gma.com') AND "users"."id" != 3) LIMIT 1
+  SQL (2.4ms)  UPDATE "users" SET "last_name" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_name", "Bee"], ["updated_at", "2021-08-06 06:38:14.369844"], ["id", 3]]
+   (10.1ms)  commit transaction
+ => true
+2.3.1 :013 > user = User.find(3)
+  User Load (5.8ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address | age | created_at              | updated_at              |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| 3  | Hunter     | Bee       | son@gma.com   | 30  | 2021-08-05 06:24:13 UTC | 2021-08-06 06:38:14 UTC |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+1 row in set
+2.3.1 :014 > delete = User.last.destroy
+  User Load (1.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+   (0.0ms)  begin transaction
+  SQL (4.7ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 4]]
+   (7.3ms)  commit transaction
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address | age | created_at              | updated_at              |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+| 4  | Kbson      | Kisssslo  | bson@gma.com  | 23  | 2021-08-05 06:33:54 UTC | 2021-08-05 06:33:54 UTC |
++----+------------+-----------+---------------+-----+-------------------------+-------------------------+
+1 row in set
+2.3.1 :015 > users = User.all
+  User Load (4.6ms)  SELECT "users".* FROM "users"
++----+------------+-----------+----------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email_address  | age | created_at              | updated_at              |
++----+------------+-----------+----------------+-----+-------------------------+-------------------------+
+| 1  | Jake       | Thompson  |                |     | 2021-08-05 05:55:43 UTC | 2021-08-05 05:55:43 UTC |
+| 2  | Jobson     | Kilo      | jobson@gma.com | 20  | 2021-08-05 06:21:38 UTC | 2021-08-05 06:21:38 UTC |
+| 3  | Hunter     | Bee       | son@gma.com    | 30  | 2021-08-05 06:24:13 UTC | 2021-08-06 06:38:14 UTC |
++----+------------+-----------+----------------+-----+-------------------------+-------------------------+
+3 rows in set
+2.3.1 :016 > user.save
+   (0.1ms)  begin transaction
+  User Exists (5.0ms)  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email_address") = LOWER('son@gma.com') AND "users"."id" != 3) LIMIT 1
+   (0.2ms)  commit transaction
+ => true
+2.3.1 :017 >
