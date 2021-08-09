@@ -503,4 +503,429 @@ NameError: undefined local variable or method `dojo1' for main:Object
   SQL (11.2ms)  INSERT INTO "dojos" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "CodingDojo Los Angeles"], ["created_at", "2021-08-08 19:32:58.628506"], ["updated_at", "2021-08-08 19:32:58.628506"]]
    (2.4ms)  commit transaction
  => true
-2.3.1 :026 >
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails> cd .\vagrant\
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/trusty64' version '20190514.0.0' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 3000 (guest) => 3000 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default:
+    default: Guest Additions Version: 4.3.40
+    default: VirtualBox Version: 6.0
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/X/Desktop/Dojo Assignments/Ruby on rails/vagrant
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant ssh
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Aug  9 04:30:06 UTC 2021
+
+  System load:  1.1               Processes:           97
+  Usage of /:   5.2% of 39.34GB   Users logged in:     0
+  Memory usage: 6%                IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+UA Infrastructure Extended Security Maintenance (ESM) is not enabled.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+Enable UA Infrastructure ESM to receive 146 additional security updates.
+See https://ubuntu.com/advantage or run: sudo ua status
+
+New release '16.04.7 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sun Aug  8 16:42:09 2021 from 10.0.2.2
+vagrant@vagrant-ubuntu-trusty-64:~$ cd /vagrant
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ ls
+bootstrap.sh  rails  ruby  Vagrantfile
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ cd rails
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ cd dojo_ninjas/
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ rails c
+Deprecation warning: Expected string default value for '--rc'; got false (boolean).
+This will be rejected in the future unless you explicitly pass the options `check_default_type: false` or call `allow_incompatible_default_type!` in your code
+You can silence deprecations warning by setting the environment variable THOR_SILENCE_DEPRECATION.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /home/vagrant/.rvm/rubies/ruby-2.3.1/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some application template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the application with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ Hirb.enable
+Hirb.enable: command not found
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ Dojo.all
+Dojo.all: command not found
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ User.all
+User.all: command not found
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ dojo1 = Dojo.new(name: "CodingDojo New York", city: "New York", state: "NY")                                           
+-bash: syntax error near unexpected token `('
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ Dojo.destroy_all
+Dojo.destroy_all: command not found
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ dojo1 = Dojo.new(name: "CodingDojo Seattle", city: "Seattle", state: "WA")
+-bash: syntax error near unexpected token `('
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ dojo1.save
+dojo1.save: command not found
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ cd app/
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ rails c
+Running via Spring preloader in process 3472
+Loading development environment (Rails 4.2.7)
+2.3.1 :001 > Hirb.enable
+ => true 
+2.3.1 :002 > dojo1 = Dojo.new(name: "CodingDojo New York", city: "New York", state: "NY")
++----+---------------------+----------+-------+------------+------------+
+| id | name                | city     | state | created_at | updated_at |
++----+---------------------+----------+-------+------------+------------+
+|    | CodingDojo New York | New York | NY    |            |            |
++----+---------------------+----------+-------+------------+------------+
+1 row in set
+2.3.1 :003 > dojo1.save
+   (0.2ms)  begin transaction
+  SQL (6.7ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo New York"], ["city", "New York"], ["state", "NY"], ["created_at", "2021-08-09 04:42:29.028803"], ["updated_at", "2021-08-09 04:42:29.028803"]]
+   (5.8ms)  commit transaction
+ => true
+2.3.1 :004 > dojo2 = Dojo.new(name: "CodingDojo Silicon Valley", city: "Mountain View", state: "CA")
++----+---------------------------+---------------+-------+------------+------------+
+| id | name                      | city          | state | created_at | updated_at |
++----+---------------------------+---------------+-------+------------+------------+
+|    | CodingDojo Silicon Valley | Mountain View | CA    |            |            |
++----+---------------------------+---------------+-------+------------+------------+
+1 row in set
+2.3.1 :005 > dojo2.save
+   (0.2ms)  begin transaction
+  SQL (11.8ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo Silicon Valley"], ["city", "Mountain View"], ["state", "CA"], ["created_at", "2021-08-09 04:42:54.547636"], ["updated_at", "2021-08-09 04:42:54.547636"]]
+   (13.9ms)  commit transaction
+ => true 
+2.3.1 :006 > dojo3 = Dojo.new(name: "CodingDojo New Jersey", city: "New Jersey", state: "NJ")
++----+-----------------------+------------+-------+------------+------------+
+| id | name                  | city       | state | created_at | updated_at |
++----+-----------------------+------------+-------+------------+------------+
+|    | CodingDojo New Jersey | New Jersey | NJ    |            |            |
++----+-----------------------+------------+-------+------------+------------+
+1 row in set
+2.3.1 :007 > dojo3.save
+   (0.1ms)  begin transaction
+  SQL (5.7ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo New Jersey"], ["city", "New Jersey"], ["state", "NJ"], ["created_at", "2021-08-09 04:43:51.854991"], ["updated_at", "2021-08-09 04:43:51.854991"]]
+   (7.8ms)  commit transaction
+ => true
+2.3.1 :008 > dojo = Dojo.new(city: "Los Angeles", state: "CA")
++----+------+-------------+-------+------------+------------+
+| id | name | city        | state | created_at | updated_at |
++----+------+-------------+-------+------------+------------+
+|    |      | Los Angeles | CA    |            |            |
++----+------+-------------+-------+------------+------------+
+1 row in set
+2.3.1 :009 > dojo.save
+   (0.2ms)  begin transaction
+   (0.1ms)  rollback transaction
+ => false
+2.3.1 :010 > ojo.errors.full_messages
+NameError: undefined local variable or method `ojo' for main:Object
+Did you mean?  dojo
+        from (irb):10
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/console.rb:110:in `start'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/console.rb:9:in `start'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/commands_tasks.rb:68:in `console'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands.rb:17:in `<top (required)>'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:274:in `require'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:274:in `block in require'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:240:in `load_dependency'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:274:in `require'
+        from /vagrant/rails/dojo_ninjas/app/bin/rails:9:in `<top (required)>'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:268:in `load'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:268:in `block in load'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:240:in `load_dependency'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:268:in `load'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/commands/rails.rb:6:in `call'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/command_wrapper.rb:38:in `call'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:201:in `block in serve'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:171:in `fork'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:171:in `serve'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:141:in `block in run'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:135:in `loop'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:135:in `run'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application/boot.rb:19:in `<top (required)>'
+        from /home/vagrant/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+        from /home/vagrant/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+        from -e:1:in `<main>'
+2.3.1 :011 > dojo.errors
+ => #<ActiveModel::Errors:0x000000045611d0 @base=#<Dojo id: nil, name: nil, city: "Los Angeles", state: "CA", created_at: nil, updated_at: nil>, @messages={:name=>["can't be blank"]}>
+2.3.1 :012 >
+2.3.1 :013 >   dojo = Dojo.new(name: "CodingDojo Los Angeles", state: "CA")
++----+------------------------+------+-------+------------+------------+
+| id | name                   | city | state | created_at | updated_at |
++----+------------------------+------+-------+------------+------------+
+|    | CodingDojo Los Angeles |      | CA    |            |            |
++----+------------------------+------+-------+------------+------------+
+1 row in set
+2.3.1 :014 > dojo.save
+   (0.2ms)  begin transaction
+   (0.1ms)  rollback transaction
+ => false
+2.3.1 :015 > dojo.errors
+ => #<ActiveModel::Errors:0x00000004484668 @base=#<Dojo id: nil, name: "CodingDojo Los Angeles", city: nil, state: "CA", created_at: nil, updated_at: nil>, @messages={:city=>["can't be blank"]}>
+2.3.1 :016 > dojo = Dojo.new(name: "CodingDojo Los Angeles", city: "Los Angeles")
++----+------------------------+-------------+-------+------------+------------+
+| id | name                   | city        | state | created_at | updated_at |
++----+------------------------+-------------+-------+------------+------------+
+|    | CodingDojo Los Angeles | Los Angeles |       |            |            |
++----+------------------------+-------------+-------+------------+------------+
+1 row in set
+2.3.1 :017 > dojo.save
+   (0.1ms)  begin transaction
+   (0.1ms)  rollback transaction
+ => false
+2.3.1 :018 > dojo.errors
+ => #<ActiveModel::Errors:0x0000000441cd60 @base=#<Dojo id: nil, name: "CodingDojo Los Angeles", city: "Los Angeles", state: nil, created_at: nil, updated_at: nil>, @messages={:state=>["is the wrong length (should be 2 characters)"]}>
+2.3.1 :019 > Dojo.first.ninjas.create(first_name: "Mike", last_name: "Dam")
+  Dojo Load (5.5ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1
+   (0.0ms)  begin transaction
+  SQL (2.6ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Mike"], ["last_name", "Dam"], ["dojo_id", 5], ["created_at", "2021-08-09 04:47:49.711526"], ["updated_at", "2021-08-09 04:47:49.711526"]]
+   (9.2ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 1  | Mike       | Dam       | 5       | 2021-08-09 04:47:49 UTC | 2021-08-09 04:47:49 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :020 > Dojo.first.ninjas.create(first_name: "Jan", last_name: "Lam")
+  Dojo Load (1.8ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (4.1ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Jan"], ["last_name", "Lam"], ["dojo_id", 5], ["created_at", "2021-08-09 04:48:19.527151"], ["updated_at", "2021-08-09 04:48:19.527151"]]
+   (26.1ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 2  | Jan        | Lam       | 5       | 2021-08-09 04:48:19 UTC | 2021-08-09 04:48:19 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :021 > Dojo.first.ninjas.create(first_name: "John", last_name: "Doe")
+  Dojo Load (5.3ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.0ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "John"], ["last_name", "Doe"], ["dojo_id", 5], ["created_at", "2021-08-09 04:48:25.880055"], ["updated_at", "2021-08-09 04:48:25.880055"]]
+   (9.8ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 3  | John       | Doe       | 5       | 2021-08-09 04:48:25 UTC | 2021-08-09 04:48:25 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :022 > Dojo.second.ninjas.create(first_name: "hames", last_name: "Rodri")
+  Dojo Load (1.7ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (4.2ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "hames"], ["last_name", "Rodri"], ["dojo_id", 6], ["created_at", "2021-08-09 04:49:40.313396"], ["updated_at", "2021-08-09 04:49:40.313396"]]
+   (10.0ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 4  | hames      | Rodri     | 6       | 2021-08-09 04:49:40 UTC | 2021-08-09 04:49:40 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :023 > Dojo.second.ninjas.create(first_name: "Messi", last_name: "Lionel")
+  Dojo Load (6.3ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.5ms)  begin transaction
+  SQL (13.0ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Messi"], ["last_name", "Lionel"], ["dojo_id", 6], ["created_at", "2021-08-09 04:50:48.391651"], ["updated_at", "2021-08-09 04:50:48.391651"]]
+   (14.1ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 5  | Messi      | Lionel    | 6       | 2021-08-09 04:50:48 UTC | 2021-08-09 04:50:48 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :024 > Dojo.second.ninjas.create(first_name: "Cristiano", last_name: "Ronaldo")
+  Dojo Load (1.8ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (4.5ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Cristiano"], ["last_name", "Ronaldo"], ["dojo_id", 6], ["created_at", "2021-08-09 04:51:19.330340"], ["updated_at", "2021-08-09 04:51:19.330340"]]
+   (35.1ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 6  | Cristiano  | Ronaldo   | 6       | 2021-08-09 04:51:19 UTC | 2021-08-09 04:51:19 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :025 > Dojo.third.ninjas.create(first_name: "Kevin", last_name: "Durant")
+  Dojo Load (5.3ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (21.9ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Kevin"], ["last_name", "Durant"], ["dojo_id", 7], ["created_at", "2021-08-09 04:52:27.779371"], ["updated_at", "2021-08-09 04:52:27.779371"]]
+   (13.7ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 7  | Kevin      | Durant    | 7       | 2021-08-09 04:52:27 UTC | 2021-08-09 04:52:27 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :026 > Dojo.third.ninjas.create(first_name: "Kurt", last_name: "Angle")
+  Dojo Load (1.6ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (3.9ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Kurt"], ["last_name", "Angle"], ["dojo_id", 7], ["created_at", "2021-08-09 04:52:50.479165"], ["updated_at", "2021-08-09 04:52:50.479165"]]
+   (11.1ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 8  | Kurt       | Angle     | 7       | 2021-08-09 04:52:50 UTC | 2021-08-09 04:52:50 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :027 > Dojo.third.ninjas.create(first_name: "Kyle", last_name: "Irwing")
+  Dojo Load (1.9ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (3.6ms)  INSERT INTO "ninjas" ("first_name", "last_name", "dojo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Kyle"], ["last_name", "Irwing"], ["dojo_id", 7], ["created_at", "2021-08-09 04:53:08.384390"], ["updated_at", "2021-08-09 04:53:08.384390"]]
+   (12.8ms)  commit transaction
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 9  | Kyle       | Irwing    | 7       | 2021-08-09 04:53:08 UTC | 2021-08-09 04:53:08 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :028 > Dojo.first.ninjas
+  Dojo Load (5.8ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1
+  Ninja Load (5.4ms)  SELECT "ninjas".* FROM "ninjas" WHERE "ninjas"."dojo_id" = ?  [["dojo_id", 5]]
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 1  | Mike       | Dam       | 5       | 2021-08-09 04:47:49 UTC | 2021-08-09 04:47:49 UTC |
+| 2  | Jan        | Lam       | 5       | 2021-08-09 04:48:19 UTC | 2021-08-09 04:48:19 UTC |
+| 3  | John       | Doe       | 5       | 2021-08-09 04:48:25 UTC | 2021-08-09 04:48:25 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+3 rows in set
+2.3.1 :029 > Dojo.second.ninjas
+  Dojo Load (6.3ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+  Ninja Load (5.0ms)  SELECT "ninjas".* FROM "ninjas" WHERE "ninjas"."dojo_id" = ?  [["dojo_id", 6]]
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 4  | hames      | Rodri     | 6       | 2021-08-09 04:49:40 UTC | 2021-08-09 04:49:40 UTC |
+| 5  | Messi      | Lionel    | 6       | 2021-08-09 04:50:48 UTC | 2021-08-09 04:50:48 UTC |
+| 6  | Cristiano  | Ronaldo   | 6       | 2021-08-09 04:51:19 UTC | 2021-08-09 04:51:19 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+3 rows in set
+2.3.1 :030 > Dojo.third.ninjas
+  Dojo Load (5.1ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+  Ninja Load (5.3ms)  SELECT "ninjas".* FROM "ninjas" WHERE "ninjas"."dojo_id" = ?  [["dojo_id", 7]]
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 7  | Kevin      | Durant    | 7       | 2021-08-09 04:52:27 UTC | 2021-08-09 04:52:27 UTC |
+| 8  | Kurt       | Angle     | 7       | 2021-08-09 04:52:50 UTC | 2021-08-09 04:52:50 UTC |
+| 9  | Kyle       | Irwing    | 7       | 2021-08-09 04:53:08 UTC | 2021-08-09 04:53:08 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+3 rows in set
+2.3.1 :031 > Ninja.where(dojo: Dojo.second).select(:id, :first_name).order(created_at: :desc)
+  Dojo Load (4.1ms)  SELECT  "dojos".* FROM "dojos"  ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+  Ninja Load (1.8ms)  SELECT "ninjas"."id", "ninjas"."first_name" FROM "ninjas" WHERE "ninjas"."dojo_id" = 6  ORDER BY "ninjas"."created_at" DESC
++----+------------+
+| id | first_name |
++----+------------+
+| 6  | Cristiano  |
+| 5  | Messi      |
+| 4  | hames      |
++----+------------+
+3 rows in set
+2.3.1 :032 > Ninja.all
+  Ninja Load (4.9ms)  SELECT "ninjas".* FROM "ninjas"
++----+------------+-----------+---------+-------------------------+-------------------------+
+| id | first_name | last_name | dojo_id | created_at              | updated_at              |
++----+------------+-----------+---------+-------------------------+-------------------------+
+| 1  | Mike       | Dam       | 5       | 2021-08-09 04:47:49 UTC | 2021-08-09 04:47:49 UTC |
+| 2  | Jan        | Lam       | 5       | 2021-08-09 04:48:19 UTC | 2021-08-09 04:48:19 UTC |
+| 3  | John       | Doe       | 5       | 2021-08-09 04:48:25 UTC | 2021-08-09 04:48:25 UTC |
+| 4  | hames      | Rodri     | 6       | 2021-08-09 04:49:40 UTC | 2021-08-09 04:49:40 UTC |
+| 5  | Messi      | Lionel    | 6       | 2021-08-09 04:50:48 UTC | 2021-08-09 04:50:48 UTC |
+| 6  | Cristiano  | Ronaldo   | 6       | 2021-08-09 04:51:19 UTC | 2021-08-09 04:51:19 UTC |
+| 7  | Kevin      | Durant    | 7       | 2021-08-09 04:52:27 UTC | 2021-08-09 04:52:27 UTC |
+| 8  | Kurt       | Angle     | 7       | 2021-08-09 04:52:50 UTC | 2021-08-09 04:52:50 UTC |
+| 9  | Kyle       | Irwing    | 7       | 2021-08-09 04:53:08 UTC | 2021-08-09 04:53:08 UTC |
++----+------------+-----------+---------+-------------------------+-------------------------+
+9 rows in set
+2.3.1 :033 > Dojo.all
+  Dojo Load (1.5ms)  SELECT "dojos".* FROM "dojos"
++----+---------------------------+---------------+-------+-------------------------+-------------------------+
+| id | name                      | city          | state | created_at              | updated_at              |
++----+---------------------------+---------------+-------+-------------------------+-------------------------+
+| 5  | CodingDojo Seattle        | Seattle       | WA    | 2021-08-08 19:27:18 UTC | 2021-08-08 19:27:18 UTC |
+| 6  | CodingDojo New York       | New York      | NY    | 2021-08-08 19:28:00 UTC | 2021-08-08 19:28:00 UTC |
+| 7  | CodingDojo Dallas         | Dallas        | TX    | 2021-08-08 19:29:36 UTC | 2021-08-08 19:29:36 UTC |
+| 8  | CodingDojo Los Angeles    |               | CA    | 2021-08-08 19:30:11 UTC | 2021-08-08 19:30:11 UTC |
+| 9  | CodingDojo Los Angeles    | Los Angeles   |       | 2021-08-08 19:31:45 UTC | 2021-08-08 19:31:45 UTC |
+| 10 | CodingDojo Los Angeles    |               |       | 2021-08-08 19:32:58 UTC | 2021-08-08 19:32:58 UTC |
+| 11 | CodingDojo New York       | New York      | NY    | 2021-08-09 04:42:29 UTC | 2021-08-09 04:42:29 UTC |
+| 12 | CodingDojo Silicon Valley | Mountain View | CA    | 2021-08-09 04:42:54 UTC | 2021-08-09 04:42:54 UTC |
+| 13 | CodingDojo New Jersey     | New Jersey    | NJ    | 2021-08-09 04:43:51 UTC | 2021-08-09 04:43:51 UTC |
++----+---------------------------+---------------+-------+-------------------------+-------------------------+
+9 rows in set
+2.3.1 :034 >
