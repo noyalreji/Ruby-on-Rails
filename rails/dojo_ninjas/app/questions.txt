@@ -1,0 +1,506 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails> cd .\vagrant\
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/trusty64' version '20190514.0.0' is up to date...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant ssh
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Aug  8 16:37:09 UTC 2021
+
+  System load:  0.11              Processes:           96
+  Usage of /:   5.2% of 39.34GB   Users logged in:     0
+  Memory usage: 6%                IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+UA Infrastructure Extended Security Maintenance (ESM) is not enabled.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+Enable UA Infrastructure ESM to receive 146 additional security updates.
+See https://ubuntu.com/advantage or run: sudo ua status
+
+New release '16.04.7 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sun Aug  8 16:37:09 2021 from 10.0.2.2
+vagrant@vagrant-ubuntu-trusty-64:~$ cd /vagrant
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ cd rails
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ cd dojo_ninjas/
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ rails new app
+Deprecation warning: Expected string default value for '--rc'; got false (boolean).
+This will be rejected in the future unless you explicitly pass the options `check_default_type: false` or call `allow_incompatible_default_type!` in your code
+You can silence deprecations warning by setting the environment variable THOR_SILENCE_DEPRECATION.
+      create
+      create  README.rdoc
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/javascripts/application.js
+      create  app/assets/stylesheets/application.css
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/views/layouts/application.html.erb
+      create  app/assets/images/.keep
+      create  app/mailers/.keep
+      create  app/models/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/secrets.yml
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/.............
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies....
+Using rake 13.0.6
+Using concurrent-ruby 1.1.9
+Using i18n 0.9.5
+Using json 1.8.6
+Using minitest 5.14.4
+Using thread_safe 0.3.6
+Using tzinfo 1.2.9
+Using activesupport 4.2.7
+Using builder 3.2.4
+Using erubis 2.7.0
+Using mini_portile2 2.4.0
+Using nokogiri 1.10.10
+Using rails-deprecated_sanitizer 1.0.4
+Using rails-dom-testing 1.0.9
+Using crass 1.0.6
+Using loofah 2.11.0
+Using rails-html-sanitizer 1.3.0
+Using actionview 4.2.7
+Using rack 1.6.13
+Using rack-test 0.6.3
+Using actionpack 4.2.7
+Using globalid 0.4.2
+Using activejob 4.2.7
+Using mini_mime 1.1.0
+Using mail 2.7.1
+Using actionmailer 4.2.7
+Using activemodel 4.2.7
+Using arel 6.0.4
+Using activerecord 4.2.7
+Using debug_inspector 1.1.0
+Using binding_of_caller 1.0.0
+Using bundler 1.17.3
+Using byebug 11.0.1
+Using coffee-script-source 1.12.2
+Using execjs 2.8.1
+Using coffee-script 2.4.1
+Using thor 1.1.0
+Using railties 4.2.7
+Using coffee-rails 4.1.1
+Using ffi 1.15.3
+Using jbuilder 2.9.1
+Using jquery-rails 4.4.0
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.2
+Using rails 4.2.7
+Using rb-fsevent 0.11.0
+Using rb-inotify 0.10.1
+Using rdoc 4.3.0
+Using sass-listen 4.0.0
+Using sass 3.7.4
+Using tilt 2.0.10
+Using sass-rails 5.0.7
+Using sdoc 0.4.2
+Using spring 2.0.2
+Using sqlite3 1.4.2
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.1
+Using uglifier 4.2.0
+Using web-console 2.3.0
+Bundle complete! 12 Gemfile dependencies, 59 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+         run  bundle exec spring binstub --all
+* bin/rake: spring inserted
+* bin/rails: spring inserted
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas$ cd app
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ bundle install
+Fetching gem metadata from https://rubygems.org/.............
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using rake 13.0.6
+Using concurrent-ruby 1.1.9
+Using i18n 0.9.5
+Using json 1.8.6
+Using minitest 5.14.4
+Using thread_safe 0.3.6
+Using tzinfo 1.2.9
+Using activesupport 4.2.7
+Using builder 3.2.4
+Using erubis 2.7.0
+Using mini_portile2 2.4.0
+Using nokogiri 1.10.10
+Using rails-deprecated_sanitizer 1.0.4
+Using rails-dom-testing 1.0.9
+Using crass 1.0.6
+Using loofah 2.11.0
+Using rails-html-sanitizer 1.3.0
+Using actionview 4.2.7
+Using rack 1.6.13
+Using rack-test 0.6.3
+Using actionpack 4.2.7
+Using globalid 0.4.2
+Using activejob 4.2.7
+Using mini_mime 1.1.0
+Using mail 2.7.1
+Using actionmailer 4.2.7
+Using activemodel 4.2.7
+Using arel 6.0.4
+Using activerecord 4.2.7
+Using debug_inspector 1.1.0
+Using binding_of_caller 1.0.0
+Using bundler 1.17.3
+Using byebug 11.0.1
+Using coffee-script-source 1.12.2
+Using execjs 2.8.1
+Using coffee-script 2.4.1
+Using thor 1.1.0
+Using railties 4.2.7
+Using coffee-rails 4.1.1
+Using ffi 1.15.3
+Using hirb 0.7.3
+Using jbuilder 2.9.1
+Using jquery-rails 4.4.0
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.2
+Using rails 4.2.7
+Using rb-fsevent 0.11.0
+Using rb-inotify 0.10.1
+Using rdoc 4.3.0
+Using sass-listen 4.0.0
+Using sass 3.7.4
+Using tilt 2.0.10
+Using sass-rails 5.0.7
+Using sdoc 0.4.2
+Using spring 2.0.2
+Using sqlite3 1.3.13 (was 1.4.2)
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.1
+Using uglifier 4.2.0
+Using web-console 2.3.0
+Bundle complete! 13 Gemfile dependencies, 60 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ rails g model Dojo name:string city:string state:string
+Running via Spring preloader in process 3759
+      invoke  active_record
+      create    db/migrate/20210808164858_create_dojos.rb
+      create    app/models/dojo.rb
+      invoke    test_unit
+      create      test/models/dojo_test.rb
+      create      test/fixtures/dojos.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ rails g model Ninja first_name:string last_name:string dojo:references
+Running via Spring preloader in process 3767
+      invoke  active_record
+      create    db/migrate/20210808164912_create_ninjas.rb
+      create    app/models/ninja.rb
+      invoke    test_unit
+      create      test/models/ninja_test.rb
+      create      test/fixtures/ninjas.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ rake db:migrate
+== 20210808164858 CreateDojos: migrating ======================================
+-- create_table(:dojos)
+   -> 0.0049s
+== 20210808164858 CreateDojos: migrated (0.0055s) =============================
+
+== 20210808164912 CreateNinjas: migrating =====================================
+-- create_table(:ninjas)
+   -> 0.0042s
+== 20210808164912 CreateNinjas: migrated (0.0048s) ============================
+
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ Dojo.create(name: "CodingDojo Dallas", city: "Dallas", state: "TX")
+-bash: syntax error near unexpected token `name:'
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ Dojo.create(name: "CodingDojo Los Angeles", state: "CA")
+-bash: syntax error near unexpected token `name:'
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ Dojo.create(name: "CodingDojo New York", city: "New York", state: "NY")
+-bash: syntax error near unexpected token `name:'
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/dojo_ninjas/app$ rails c
+Running via Spring preloader in process 4418
+Loading development environment (Rails 4.2.7)
+2.3.1 :001 > Hirb.enable
+ => true 
+2.3.1 :002 > Dojo.create(name: "CodingDojo Dallas", city: "Dallas", state: "TX")
+   (0.1ms)  begin transaction
+  SQL (3.8ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo Dallas"], ["city", "Dallas"], ["state", "TX"], ["created_at", "2021-08-08 19:07:06.786651"], ["updated_at", "2021-08-08 19:07:06.786651"]]
+   (9.1ms)  commit transaction
++----+-------------------+--------+-------+-------------------------+-------------------------+
+| id | name              | city   | state | created_at              | updated_at              |
++----+-------------------+--------+-------+-------------------------+-------------------------+
+| 1  | CodingDojo Dallas | Dallas | TX    | 2021-08-08 19:07:06 UTC | 2021-08-08 19:07:06 UTC |
++----+-------------------+--------+-------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :003 > Dojo.create(name: "CodingDojo Los Angeles", state: "CA")
+   (0.2ms)  begin transaction
+  SQL (4.9ms)  INSERT INTO "dojos" ("name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "CodingDojo Los Angeles"], ["state", "CA"], ["created_at", "2021-08-08 19:07:30.900688"], ["updated_at", "2021-08-08 19:07:30.900688"]]
+   (8.2ms)  commit transaction
++----+------------------------+------+-------+-------------------------+-------------------------+
+| id | name                   | city | state | created_at              | updated_at              |
++----+------------------------+------+-------+-------------------------+-------------------------+
+| 2  | CodingDojo Los Angeles |      | CA    | 2021-08-08 19:07:30 UTC | 2021-08-08 19:07:30 UTC |
++----+------------------------+------+-------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :004 > Dojo.create(name: "CodingDojo Seattle", city: "Seattle", state: "WA")
+   (0.2ms)  begin transaction
+  SQL (8.9ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo Seattle"], ["city", "Seattle"], ["state", "WA"], 
+["created_at", "2021-08-08 19:07:47.403021"], ["updated_at", "2021-08-08 19:07:47.403021"]]
+   (8.2ms)  commit transaction
++----+--------------------+---------+-------+-------------------------+-------------------------+
+| id | name               | city    | state | created_at              | updated_at              |
++----+--------------------+---------+-------+-------------------------+-------------------------+
+| 3  | CodingDojo Seattle | Seattle | WA    | 2021-08-08 19:07:47 UTC | 2021-08-08 19:07:47 UTC |
++----+--------------------+---------+-------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :005 > Dojo.create(name: "CodingDojo New York", city: "New York", state: "NY")
+   (0.1ms)  begin transaction
+  SQL (9.7ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo New York"], ["city", "New York"], ["state", "NY"], ["created_at", "2021-08-08 19:07:56.971077"], ["updated_at", "2021-08-08 19:07:56.971077"]]
+   (8.5ms)  commit transaction
++----+---------------------+----------+-------+-------------------------+-------------------------+
+| id | name                | city     | state | created_at              | updated_at              |
++----+---------------------+----------+-------+-------------------------+-------------------------+
+| 4  | CodingDojo New York | New York | NY    | 2021-08-08 19:07:56 UTC | 2021-08-08 19:07:56 UTC |
++----+---------------------+----------+-------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :006 > Dojo.destroy_all
+  Dojo Load (5.4ms)  SELECT "dojos".* FROM "dojos"
+   (0.1ms)  begin transaction
+  SQL (8.8ms)  DELETE FROM "dojos" WHERE "dojos"."id" = ?  [["id", 1]]
+   (2.5ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (3.4ms)  DELETE FROM "dojos" WHERE "dojos"."id" = ?  [["id", 2]]
+   (2.8ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (3.3ms)  DELETE FROM "dojos" WHERE "dojos"."id" = ?  [["id", 3]]
+   (1.8ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (3.0ms)  DELETE FROM "dojos" WHERE "dojos"."id" = ?  [["id", 4]]
+   (8.8ms)  commit transaction
++----+------------------------+----------+-------+-------------------------+-------------------------+
+| id | name                   | city     | state | created_at              | updated_at              |
++----+------------------------+----------+-------+-------------------------+-------------------------+
+| 1  | CodingDojo Dallas      | Dallas   | TX    | 2021-08-08 19:07:06 UTC | 2021-08-08 19:07:06 UTC |
+| 2  | CodingDojo Los Angeles |          | CA    | 2021-08-08 19:07:30 UTC | 2021-08-08 19:07:30 UTC |
+| 3  | CodingDojo Seattle     | Seattle  | WA    | 2021-08-08 19:07:47 UTC | 2021-08-08 19:07:47 UTC |
+| 4  | CodingDojo New York    | New York | NY    | 2021-08-08 19:07:56 UTC | 2021-08-08 19:07:56 UTC |
++----+------------------------+----------+-------+-------------------------+-------------------------+
+4 rows in set
+2.3.1 :007 > Dojo.new(name: "CodingDojo New York", city: "New York", state: "NY")
++----+---------------------+----------+-------+------------+------------+
+| id | name                | city     | state | created_at | updated_at |
++----+---------------------+----------+-------+------------+------------+
+|    | CodingDojo New York | New York | NY    |            |            |
++----+---------------------+----------+-------+------------+------------+
+1 row in set
+2.3.1 :008 > dojo1.save
+NameError: undefined local variable or method `dojo1' for main:Object
+        from (irb):8
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/console.rb:110:in `start'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/console.rb:9:in `start'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/commands_tasks.rb:68:in `console'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7/lib/rails/commands.rb:17:in `<top (required)>'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:274:in `require'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:274:in `block in require'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:240:in `load_dependency'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:274:in `require'
+        from /vagrant/rails/dojo_ninjas/app/bin/rails:9:in `<top (required)>'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:268:in `load'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:268:in `block in load'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:240:in `load_dependency'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.7/lib/active_support/dependencies.rb:268:in `load'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/commands/rails.rb:6:in `call'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/command_wrapper.rb:38:in `call'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:201:in `block in serve'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:171:in `fork'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:171:in `serve'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:141:in `block in run'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:135:in `loop'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application.rb:135:in `run'
+        from /home/vagrant/.rvm/gems/ruby-2.3.1/gems/spring-2.0.2/lib/spring/application/boot.rb:19:in `<top (required)>'
+        from /home/vagrant/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+        from /home/vagrant/.rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+        from -e:1:in `<main>'
+2.3.1 :009 > Dojo.new(name: "CodingDojo Silicon Valley", city: "Mountain View", state: "CA")
++----+---------------------------+---------------+-------+------------+------------+
+| id | name                      | city          | state | created_at | updated_at |
++----+---------------------------+---------------+-------+------------+------------+
+|    | CodingDojo Silicon Valley | Mountain View | CA    |            |            |
++----+---------------------------+---------------+-------+------------+------------+
+1 row in set
+2.3.1 :010 > Dojo.new(name: "CodingDojo Dallas", city: "Dallas", state: "TX")
++----+-------------------+--------+-------+------------+------------+
+| id | name              | city   | state | created_at | updated_at |
++----+-------------------+--------+-------+------------+------------+
+|    | CodingDojo Dallas | Dallas | TX    |            |            |
++----+-------------------+--------+-------+------------+------------+
+1 row in set
+2.3.1 :011 > ^C
+2.3.1 :011 > Dojo.new(name: "CodingDojo Los Angeles", state: "CA")
++----+------------------------+------+-------+------------+------------+
+| id | name                   | city | state | created_at | updated_at |
++----+------------------------+------+-------+------------+------------+
+|    | CodingDojo Los Angeles |      | CA    |            |            |
++----+------------------------+------+-------+------------+------------+
+1 row in set
+2.3.1 :012 > Dojo.new(name: "CodingDojo Los Angeles", state: "CA")
++----+------------------------+------+-------+------------+------------+
+| id | name                   | city | state | created_at | updated_at |
++----+------------------------+------+-------+------------+------------+
+|    | CodingDojo Los Angeles |      | CA    |            |            |
++----+------------------------+------+-------+------------+------------+
+1 row in set
+2.3.1 :013 > Dojo.new(name: "CodingDojo Los Angeles", state: "CA")
++----+------------------------+------+-------+------------+------------+
+| id | name                   | city | state | created_at | updated_at |
++----+------------------------+------+-------+------------+------------+
+|    | CodingDojo Los Angeles |      | CA    |            |            |
++----+------------------------+------+-------+------------+------------+
+1 row in set
+2.3.1 :014 > dojo1 = Dojo.new(name: "CodingDojo Seattle", city: "Seattle", state: "WA")
++----+--------------------+---------+-------+------------+------------+
+| id | name               | city    | state | created_at | updated_at |
++----+--------------------+---------+-------+------------+------------+
+|    | CodingDojo Seattle | Seattle | WA    |            |            |
++----+--------------------+---------+-------+------------+------------+
+1 row in set
+2.3.1 :015 > dojo1.save
+   (0.2ms)  begin transaction
+  SQL (12.4ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo Seattle"], ["city", "Seattle"], ["state", "WA"], ["created_at", "2021-08-08 19:27:18.435170"], ["updated_at", "2021-08-08 19:27:18.435170"]]
+   (19.6ms)  commit transaction
+ => true
+2.3.1 :016 > dojo2  = Dojo.new(name: "CodingDojo New York", city: "New York", state: "NY")
++----+---------------------+----------+-------+------------+------------+
+| id | name                | city     | state | created_at | updated_at |
++----+---------------------+----------+-------+------------+------------+
+|    | CodingDojo New York | New York | NY    |            |            |
++----+---------------------+----------+-------+------------+------------+
+1 row in set
+2.3.1 :017 > dojo2.save
+   (0.1ms)  begin transaction
+  SQL (11.3ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo New York"], ["city", "New York"], ["state", "NY"], ["created_at", "2021-08-08 19:28:00.291640"], ["updated_at", "2021-08-08 19:28:00.291640"]]
+   (10.5ms)  commit transaction
+ => true
+2.3.1 :018 > dojo3 = Dojo.new(name: "CodingDojo Dallas", city: "Dallas", state: "TX")
++----+-------------------+--------+-------+------------+------------+
+| id | name              | city   | state | created_at | updated_at |
++----+-------------------+--------+-------+------------+------------+
+|    | CodingDojo Dallas | Dallas | TX    |            |            |
++----+-------------------+--------+-------+------------+------------+
+1 row in set
+2.3.1 :019 > dojo3.save
+   (0.1ms)  begin transaction
+  SQL (3.5ms)  INSERT INTO "dojos" ("name", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "CodingDojo Dallas"], ["city", "Dallas"], ["state", "TX"], ["created_at", "2021-08-08 19:29:36.609189"], ["updated_at", "2021-08-08 19:29:36.609189"]]
+   (1.9ms)  commit transaction
+ => true
+2.3.1 :020 > dojo = Dojo.new(name: "CodingDojo Los Angeles", state: "CA")
++----+------------------------+------+-------+------------+------------+
+| id | name                   | city | state | created_at | updated_at |
++----+------------------------+------+-------+------------+------------+
+|    | CodingDojo Los Angeles |      | CA    |            |            |
++----+------------------------+------+-------+------------+------------+
+1 row in set
+2.3.1 :021 > dojo.save
+   (0.2ms)  begin transaction
+  SQL (4.2ms)  INSERT INTO "dojos" ("name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "CodingDojo Los Angeles"], ["state", "CA"], ["created_at", "2021-08-08 19:30:11.689344"], ["updated_at", "2021-08-08 19:30:11.689344"]]
+   (2.5ms)  commit transaction
+ => true
+2.3.1 :022 > dojo = Dojo.new(name: "CodingDojo Los Angeles", city: "Los Angeles")
++----+------------------------+-------------+-------+------------+------------+
+| id | name                   | city        | state | created_at | updated_at |
++----+------------------------+-------------+-------+------------+------------+
+|    | CodingDojo Los Angeles | Los Angeles |       |            |            |
++----+------------------------+-------------+-------+------------+------------+
+1 row in set
+2.3.1 :023 > dojo.save
+   (0.3ms)  begin transaction
+  SQL (10.9ms)  INSERT INTO "dojos" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "CodingDojo Los Angeles"], ["city", "Los Angeles"], ["created_at", "2021-08-08 19:31:45.484207"], ["updated_at", "2021-08-08 19:31:45.484207"]]
+   (3.6ms)  commit transaction
+ => true
+2.3.1 :024 > dojo = Dojo.new(name: "CodingDojo Los Angeles")
++----+------------------------+------+-------+------------+------------+
+| id | name                   | city | state | created_at | updated_at |
++----+------------------------+------+-------+------------+------------+
+|    | CodingDojo Los Angeles |      |       |            |            |
++----+------------------------+------+-------+------------+------------+
+1 row in set
+2.3.1 :025 > dojo.save
+   (0.1ms)  begin transaction
+  SQL (11.2ms)  INSERT INTO "dojos" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "CodingDojo Los Angeles"], ["created_at", "2021-08-08 19:32:58.628506"], ["updated_at", "2021-08-08 19:32:58.628506"]]
+   (2.4ms)  commit transaction
+ => true
+2.3.1 :026 >
