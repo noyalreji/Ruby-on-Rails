@@ -1,0 +1,210 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails> cd .\vagrant\
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrnt ssh
+vagrnt : The term 'vagrnt' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was    
+At line:1 char:1
++ vagrnt ssh
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vagrnt:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/trusty64' version '20190514.0.0' is up to date...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant ssh 
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Aug  9 19:49:11 UTC 2021
+
+  System load:  0.14              Processes:           97
+  Usage of /:   5.2% of 39.34GB   Users logged in:     1
+  Memory usage: 16%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+UA Infrastructure Extended Security Maintenance (ESM) is not enabled.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+Enable UA Infrastructure ESM to receive 146 additional security updates.
+See https://ubuntu.com/advantage or run: sudo ua status
+
+New release '16.04.7 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Aug  9 19:49:11 2021 from 10.0.2.2
+vagrant@vagrant-ubuntu-trusty-64:~$ cd /vagrant
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ cd rails
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ ls
+blogs_posts_messages  dojo_ninjas  user_login_project
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ cd blogs_posts_messages/
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_posts_messages$ rails c
+Deprecation warning: Expected string default value for '--rc'; got false (boolean).
+This will be rejected in the future unless you explicitly pass the options `check_default_type: false` or call `allow_incompatible_default_type!` in your code        
+You can silence deprecations warning by setting the environment variable THOR_SILENCE_DEPRECATION.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /home/vagrant/.rvm/rubies/ruby-2.3.1/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some application template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the application with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_posts_messages$ cd my_app/
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_posts_messages/my_app$ rails c
+Running via Spring preloader in process 4774
+Loading development environment (Rails 4.2.7)
+2.3.1 :001 > Hirb.enable
+ => true 
+2.3.1 :002 > Blog.all
+  Blog Load (8.8ms)  SELECT "blogs".* FROM "blogs"
++----+--------+--------------------------+-------------------------+-------------------------+
+| id | name   | description              | created_at              | updated_at              |
++----+--------+--------------------------+-------------------------+-------------------------+
+| 1  | Blog 1 | This is the first blog 1 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 2  | Blog 2 | This is the first blog 2 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 3  | Blog 3 | This is the first blog 3 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 4  | Blog 4 | This is the first blog 4 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 5  | Blog 5 | This is the first blog 5 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
++----+--------+--------------------------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :003 > post = Post.first
+  Post Load (4.3ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1
++----+---------+---------+---------+-------------------------+-------------------------+
+| id | title   | content | blog_id | created_at              | updated_at              |
++----+---------+---------+---------+-------------------------+-------------------------+
+| 1  |  Post 1 | Blog 1  | 1       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
++----+---------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :004 > names = ["John Doe", "Jane Doe", "Jan Lam", "Michael Smith", "Michelle Smith", "Michelle Smith"]
+ => ["John Doe", "Jane Doe", "Jan Lam", "Michael Smith", "Michelle Smith", "Michelle Smith"]
+2.3.1 :005 > names.each { |elem| post.messages.create(author: elem, message: "This message belongs to the first post") }
+   (0.0ms)  begin transaction
+  SQL (2.5ms)  INSERT INTO "messages" ("author", "message", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["author", "John Doe"], ["message", "This 
+message belongs to the first post"], ["post_id", 1], ["created_at", "2021-08-09 21:38:42.712426"], ["updated_at", "2021-08-09 21:38:42.712426"]]
+   (8.2ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (4.4ms)  INSERT INTO "messages" ("author", "message", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["author", "Jane Doe"], ["message", "This 
+message belongs to the first post"], ["post_id", 1], ["created_at", "2021-08-09 21:38:42.731146"], ["updated_at", "2021-08-09 21:38:42.731146"]]
+   (3.0ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (5.6ms)  INSERT INTO "messages" ("author", "message", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["author", "Jan Lam"], ["message", "This message belongs to the first post"], ["post_id", 1], ["created_at", "2021-08-09 21:38:42.740883"], ["updated_at", "2021-08-09 21:38:42.740883"]]
+   (2.9ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (9.8ms)  INSERT INTO "messages" ("author", "message", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["author", "Michael Smith"], ["message", "This message belongs to the first post"], ["post_id", 1], ["created_at", "2021-08-09 21:38:42.752555"], ["updated_at", "2021-08-09 21:38:42.752555"]]
+   (7.8ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (4.8ms)  INSERT INTO "messages" ("author", "message", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["author", "Michelle Smith"], ["message", 
+"This message belongs to the first post"], ["post_id", 1], ["created_at", "2021-08-09 21:38:42.772641"], ["updated_at", "2021-08-09 21:38:42.772641"]]
+   (6.6ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (2.9ms)  INSERT INTO "messages" ("author", "message", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["author", "Michelle Smith"], ["message", 
+"This message belongs to the first post"], ["post_id", 1], ["created_at", "2021-08-09 21:38:42.787244"], ["updated_at", "2021-08-09 21:38:42.787244"]]
+   (8.0ms)  commit transaction
+ => ["John Doe", "Jane Doe", "Jan Lam", "Michael Smith", "Michelle Smith", "Michelle Smith"]
+2.3.1 :006 > Blog.first.posts
+  Blog Load (3.5ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1
+  Post Load (1.2ms)  SELECT "posts".* FROM "posts" WHERE "posts"."blog_id" = ?  [["blog_id", 1]]
++----+---------+---------+---------+-------------------------+-------------------------+
+| id | title   | content | blog_id | created_at              | updated_at              |
++----+---------+---------+---------+-------------------------+-------------------------+
+| 1  |  Post 1 | Blog 1  | 1       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
+| 2  |  Post 2 | Blog 1  | 1       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
+| 3  |  Post 3 | Blog 1  | 1       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
++----+---------+---------+---------+-------------------------+-------------------------+
+3 rows in set
+2.3.1 :007 > Post.where(blog: Blog.last).order(title: :desc)
+  Blog Load (5.5ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+  Post Load (1.3ms)  SELECT "posts".* FROM "posts" WHERE "posts"."blog_id" = 5  ORDER BY "posts"."title" DESC
++----+----------+---------+---------+-------------------------+-------------------------+
+| id | title    | content | blog_id | created_at              | updated_at              |
++----+----------+---------+---------+-------------------------+-------------------------+
+| 15 |  Post 15 | Blog 5  | 5       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
+| 14 |  Post 14 | Blog 5  | 5       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
+| 13 |  Post 13 | Blog 5  | 5       | 2021-08-09 20:41:19 UTC | 2021-08-09 20:41:19 UTC |
++----+----------+---------+---------+-------------------------+-------------------------+
+3 rows in set
+2.3.1 :008 > Post.first.update(title: "Updating the title")
+  Post Load (1.5ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1
+   (0.0ms)  begin transaction
+  SQL (3.3ms)  UPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "Updating the title"], ["updated_at", "2021-08-09 21:39:26.894465"], ["id", 1]]
+   (2.9ms)  commit transaction
+ => true
+2.3.1 :009 > Blog.all
+  Blog Load (1.5ms)  SELECT "blogs".* FROM "blogs"
++----+--------+--------------------------+-------------------------+-------------------------+
+| id | name   | description              | created_at              | updated_at              |
++----+--------+--------------------------+-------------------------+-------------------------+
+| 1  | Blog 1 | This is the first blog 1 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 2  | Blog 2 | This is the first blog 2 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 3  | Blog 3 | This is the first blog 3 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 4  | Blog 4 | This is the first blog 4 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 5  | Blog 5 | This is the first blog 5 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
++----+--------+--------------------------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :010 > Blog.where("id < ?", 5)
+  Blog Load (2.3ms)  SELECT "blogs".* FROM "blogs" WHERE (id < 5)
++----+--------+--------------------------+-------------------------+-------------------------+
+| id | name   | description              | created_at              | updated_at              |
++----+--------+--------------------------+-------------------------+-------------------------+
+| 1  | Blog 1 | This is the first blog 1 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 2  | Blog 2 | This is the first blog 2 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 3  | Blog 3 | This is the first blog 3 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
+| 4  | Blog 4 | This is the first blog 4 | 2021-08-09 19:45:44 UTC | 2021-08-09 19:45:44 UTC |
++----+--------+--------------------------+-------------------------+-------------------------+
+4 rows in set
+2.3.1 :011 >
