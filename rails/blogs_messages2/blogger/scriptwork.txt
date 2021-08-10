@@ -1,0 +1,1027 @@
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails> cd .\vagrant\
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/trusty64' version '20190514.0.0' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 3000 (guest) => 3000 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default:
+    default: Guest Additions Version: 4.3.40
+    default: VirtualBox Version: 6.0
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/X/Desktop/Dojo Assignments/Ruby on rails/vagrant
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\X\Desktop\Dojo Assignments\Ruby on rails\vagrant> vagrant ssh
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Aug 10 04:21:01 UTC 2021
+
+  System load:  0.07              Processes:           97
+  Usage of /:   5.2% of 39.34GB   Users logged in:     0
+  Memory usage: 6%                IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+UA Infrastructure Extended Security Maintenance (ESM) is not enabled.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+Enable UA Infrastructure ESM to receive 146 additional security updates.
+See https://ubuntu.com/advantage or run: sudo ua status
+
+New release '16.04.7 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Aug  9 20:53:29 2021 from 10.0.2.2
+vagrant@vagrant-ubuntu-trusty-64:~$ cd /vagrant
+vagrant@vagrant-ubuntu-trusty-64:/vagrant$ cd rails
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ cd blogs_
+blogs_messages2/      blogs_posts_messages/ 
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ cd blogs_
+-bash: cd: blogs_: No such file or directory
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails$ cd blogs_messages2
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2$ rails new blogger
+Deprecation warning: Expected string default value for '--rc'; got false (boolean).
+This will be rejected in the future unless you explicitly pass the options `check_default_type: false` or call `allow_incompatible_default_type!` in your code        
+You can silence deprecations warning by setting the environment variable THOR_SILENCE_DEPRECATION.
+      create  
+      create  README.rdoc
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/javascripts/application.js
+      create  app/assets/stylesheets/application.css
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/views/layouts/application.html.erb
+      create  app/assets/images/.keep
+      create  app/mailers/.keep
+      create  app/models/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/secrets.yml
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/.............
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using rake 13.0.6
+Using concurrent-ruby 1.1.9
+Using i18n 0.9.5
+Using json 1.8.6
+Using minitest 5.14.4
+Using thread_safe 0.3.6
+Using tzinfo 1.2.9
+Using activesupport 4.2.7
+Using builder 3.2.4
+Using erubis 2.7.0
+Using mini_portile2 2.4.0
+Using nokogiri 1.10.10
+Using rails-deprecated_sanitizer 1.0.4
+Using rails-dom-testing 1.0.9
+Using crass 1.0.6
+Using loofah 2.11.0
+Using rails-html-sanitizer 1.3.0
+Using actionview 4.2.7
+Using rack 1.6.13
+Using rack-test 0.6.3
+Using actionpack 4.2.7
+Using globalid 0.4.2
+Using activejob 4.2.7
+Using mini_mime 1.1.0
+Using mail 2.7.1
+Using actionmailer 4.2.7
+Using activemodel 4.2.7
+Using arel 6.0.4
+Using activerecord 4.2.7
+Using debug_inspector 1.1.0
+Using binding_of_caller 1.0.0
+Using bundler 1.17.3
+Using byebug 11.0.1
+Using coffee-script-source 1.12.2
+Using execjs 2.8.1
+Using coffee-script 2.4.1
+Using thor 1.1.0
+Using railties 4.2.7
+Using coffee-rails 4.1.1
+Using ffi 1.15.3
+Using jbuilder 2.9.1
+Using jquery-rails 4.4.0
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.2
+Using rails 4.2.7
+Using rb-fsevent 0.11.0
+Using rb-inotify 0.10.1
+Using rdoc 4.3.0
+Using sass-listen 4.0.0
+Using sass 3.7.4
+Using tilt 2.0.10
+Using sass-rails 5.0.7
+Using sdoc 0.4.2
+Using spring 2.0.2
+Using sqlite3 1.4.2
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.1
+Using uglifier 4.2.0
+Using web-console 2.3.0
+Bundle complete! 12 Gemfile dependencies, 59 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+         run  bundle exec spring binstub --all
+* bin/rake: spring inserted
+* bin/rails: spring inserted
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2$ cd blogger/
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ bundle install
+Fetching gem metadata from https://rubygems.org/.............
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using rake 13.0.6
+Using concurrent-ruby 1.1.9
+Using i18n 0.9.5
+Using json 1.8.6
+Using minitest 5.14.4
+Using thread_safe 0.3.6
+Using tzinfo 1.2.9
+Using activesupport 4.2.7
+Using builder 3.2.4
+Using erubis 2.7.0
+Using mini_portile2 2.4.0
+Using nokogiri 1.10.10
+Using rails-deprecated_sanitizer 1.0.4
+Using rails-dom-testing 1.0.9
+Using crass 1.0.6
+Using loofah 2.11.0
+Using rails-html-sanitizer 1.3.0
+Using actionview 4.2.7
+Using rack 1.6.13
+Using rack-test 0.6.3
+Using actionpack 4.2.7
+Using globalid 0.4.2
+Using activejob 4.2.7
+Using mini_mime 1.1.0
+Using mail 2.7.1
+Using actionmailer 4.2.7
+Using activemodel 4.2.7
+Using arel 6.0.4
+Using activerecord 4.2.7
+Using debug_inspector 1.1.0
+Using binding_of_caller 1.0.0
+Using bundler 1.17.3
+Using byebug 11.0.1
+Using coffee-script-source 1.12.2
+Using execjs 2.8.1
+Using coffee-script 2.4.1
+Using thor 1.1.0
+Using railties 4.2.7
+Using coffee-rails 4.1.1
+Using ffi 1.15.3
+Using hirb 0.7.3
+Using jbuilder 2.9.1
+Using jquery-rails 4.4.0
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.2
+Using rails 4.2.7
+Using rb-fsevent 0.11.0
+Using rb-inotify 0.10.1
+Using rdoc 4.3.0
+Using sass-listen 4.0.0
+Using sass 3.7.4
+Using tilt 2.0.10
+Using sass-rails 5.0.7
+Using sdoc 0.4.2
+Using spring 2.0.2
+Using sqlite3 1.3.13 (was 1.4.2)
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.1
+Using uglifier 4.2.0
+Using web-console 2.3.0
+Bundle complete! 13 Gemfile dependencies, 60 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rails g model User first_name:string last_name:string email:string
+Running via Spring preloader in process 3579
+      invoke  active_record
+      create    db/migrate/20210810043114_create_users.rb
+      create    app/models/user.rb
+      invoke    test_unit
+      create      test/models/user_test.rb
+      create      test/fixtures/users.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rails g model Blog name:string description:text
+Running via Spring preloader in process 3592
+      invoke  active_record
+      create    db/migrate/20210810043550_create_blogs.rb
+      create    app/models/blog.rb
+      invoke    test_unit
+      create      test/models/blog_test.rb
+      create      test/fixtures/blogs.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rails g model Owner user:references blog:references
+Running via Spring preloader in process 3601
+      invoke  active_record
+      create    db/migrate/20210810043607_create_owners.rb
+      create    app/models/owner.rb
+      invoke    test_unit
+      create      test/models/owner_test.rb
+      create      test/fixtures/owners.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rails g model Post title:string content:text user:references blog:references
+Running via Spring preloader in process 3928
+      invoke  active_record
+      create    db/migrate/20210810054330_create_posts.rb
+      create    app/models/post.rb
+      invoke    test_unit
+      create      test/models/post_test.rb
+      create      test/fixtures/posts.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rails g model Message author:string message:text user:references post:references
+Running via Spring preloader in process 3936
+      invoke  active_record
+      create    db/migrate/20210810054344_create_messages.rb
+      create    app/models/message.rb
+      invoke    test_unit
+      create      test/models/message_test.rb
+      create      test/fixtures/messages.yml
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rake db:migrate
+== 20210810043114 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0062s
+== 20210810043114 CreateUsers: migrated (0.0067s) =============================
+
+== 20210810043550 CreateBlogs: migrating ======================================
+-- create_table(:blogs)
+   -> 0.0059s
+== 20210810043550 CreateBlogs: migrated (0.0067s) =============================
+
+== 20210810043607 CreateOwners: migrating =====================================
+-- create_table(:owners)
+   -> 0.0068s
+== 20210810043607 CreateOwners: migrated (0.0078s) ============================
+
+== 20210810054330 CreatePosts: migrating ======================================
+-- create_table(:posts)
+   -> 0.0073s
+== 20210810054330 CreatePosts: migrated (0.0082s) =============================
+
+== 20210810054344 CreateMessages: migrating ===================================
+-- create_table(:messages)
+   -> 0.0134s
+== 20210810054344 CreateMessages: migrated (0.0138s) ==========================
+
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ User.create(first_name: "Jane", last_name: "Doe", email: "jane@doe.com")
+-bash: syntax error near unexpected token `first_name:'
+vagrant@vagrant-ubuntu-trusty-64:/vagrant/rails/blogs_messages2/blogger$ rails c
+Running via Spring preloader in process 4103
+Loading development environment (Rails 4.2.7)
+2.3.1 :001 > Hirb.enable
+ => true 
+2.3.1 :002 > User.create(first_name: "Jane", last_name: "Doe", email: "jane@doe.com")
+   (0.0ms)  begin transaction
+  User Exists (1.8ms)  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('jane@doe.com') LIMIT 1
+  SQL (4.2ms)  INSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Jane"], ["last_name", "Doe"], ["email", "jane@doe.com"], ["created_at", "2021-08-10 06:16:23.961030"], ["updated_at", "2021-08-10 06:16:23.961030"]]
+   (5.1ms)  commit transaction
++----+------------+-----------+--------------+-------------------------+-------------------------+
+| id | first_name | last_name | email        | created_at              | updated_at              |
++----+------------+-----------+--------------+-------------------------+-------------------------+
+| 1  | Jane       | Doe       | jane@doe.com | 2021-08-10 06:16:23 UTC | 2021-08-10 06:16:23 UTC |
++----+------------+-----------+--------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :003 > User.create(first_name: "John", last_name: "Doe", email: "john@doe.com")
+   (0.1ms)  begin transaction
+  User Exists (5.4ms)  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('john@doe.com') LIMIT 1
+  SQL (4.0ms)  INSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "John"], ["last_name", "Doe"], ["email", "john@doe.com"], ["created_at", "2021-08-10 06:16:34.449302"], ["updated_at", "2021-08-10 06:16:34.449302"]]
+   (8.0ms)  commit transaction
++----+------------+-----------+--------------+-------------------------+-------------------------+
+| id | first_name | last_name | email        | created_at              | updated_at              |
++----+------------+-----------+--------------+-------------------------+-------------------------+
+| 2  | John       | Doe       | john@doe.com | 2021-08-10 06:16:34 UTC | 2021-08-10 06:16:34 UTC |
++----+------------+-----------+--------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :004 > User.create(first_name: "Michelle", last_name: "Smith", email: "michelle@smith.com")
+   (0.2ms)  begin transaction
+  User Exists (4.9ms)  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('michelle@smith.com') LIMIT 1
+  SQL (9.3ms)  INSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Michelle"], ["last_name", "Smith"], ["email", "michelle@smith.com"], ["created_at", "2021-08-10 06:16:54.393245"], ["updated_at", "2021-08-10 06:16:54.393245"]]
+   (14.0ms)  commit transaction
++----+------------+-----------+--------------------+-------------------------+-------------------------+
+| id | first_name | last_name | email              | created_at              | updated_at              |
++----+------------+-----------+--------------------+-------------------------+-------------------------+
+| 3  | Michelle   | Smith     | michelle@smith.com | 2021-08-10 06:16:54 UTC | 2021-08-10 06:16:54 UTC |
++----+------------+-----------+--------------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :005 > User.create(first_name: "Michael", last_name: "Smith", email: "michael@smith.com")
+   (0.1ms)  begin transaction
+  User Exists (6.7ms)  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('michael@smith.com') LIMIT 1
+  SQL (6.2ms)  INSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Michael"], ["last_name", 
+"Smith"], ["email", "michael@smith.com"], ["created_at", "2021-08-10 06:17:02.820037"], ["updated_at", "2021-08-10 06:17:02.820037"]]
+   (9.7ms)  commit transaction
++----+------------+-----------+-------------------+-------------------------+-------------------------+
+| id | first_name | last_name | email             | created_at              | updated_at              |
++----+------------+-----------+-------------------+-------------------------+-------------------------+
+| 4  | Michael    | Smith     | michael@smith.com | 2021-08-10 06:17:02 UTC | 2021-08-10 06:17:02 UTC |
++----+------------+-----------+-------------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :006 > User.create(first_name: "Smint", last_name: "Smith", email: "smiths@smith.com")
+   (0.2ms)  begin transaction
+  User Exists (1.6ms)  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('smiths@smith.com') LIMIT 1
+  SQL (2.5ms)  INSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Smint"], ["last_name", "Smith"], ["email", "smiths@smith.com"], ["created_at", "2021-08-10 06:17:30.682709"], ["updated_at", "2021-08-10 06:17:30.682709"]]
+   (6.3ms)  commit transaction
++----+------------+-----------+------------------+-------------------------+-------------------------+
+| id | first_name | last_name | email            | created_at              | updated_at              |
++----+------------+-----------+------------------+-------------------------+-------------------------+
+| 5  | Smint      | Smith     | smiths@smith.com | 2021-08-10 06:17:30 UTC | 2021-08-10 06:17:30 UTC |
++----+------------+-----------+------------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :007 > User.all
+  User Load (5.2ms)  SELECT "users".* FROM "users"
++----+------------+-----------+--------------------+-------------------------+-------------------------+
+| id | first_name | last_name | email              | created_at              | updated_at              |
++----+------------+-----------+--------------------+-------------------------+-------------------------+
+| 1  | Jane       | Doe       | jane@doe.com       | 2021-08-10 06:16:23 UTC | 2021-08-10 06:16:23 UTC |
+| 2  | John       | Doe       | john@doe.com       | 2021-08-10 06:16:34 UTC | 2021-08-10 06:16:34 UTC |
+| 3  | Michelle   | Smith     | michelle@smith.com | 2021-08-10 06:16:54 UTC | 2021-08-10 06:16:54 UTC |
+| 4  | Michael    | Smith     | michael@smith.com  | 2021-08-10 06:17:02 UTC | 2021-08-10 06:17:02 UTC |
+| 5  | Smint      | Smith     | smiths@smith.com   | 2021-08-10 06:17:30 UTC | 2021-08-10 06:17:30 UTC |
++----+------------+-----------+--------------------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :008 > Blog.create(name:"Blog 1", description:"Nice Blog")
+   (0.1ms)  begin transaction
+  SQL (3.3ms)  INSERT INTO "blogs" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Blog 1"], ["description", "Nice Blog"], ["created_at", "2021-08-10 06:21:55.489439"], ["updated_at", "2021-08-10 06:21:55.489439"]]
+   (6.0ms)  commit transaction
++----+--------+-------------+-------------------------+-------------------------+
+| id | name   | description | created_at              | updated_at              |
++----+--------+-------------+-------------------------+-------------------------+
+| 1  | Blog 1 | Nice Blog   | 2021-08-10 06:21:55 UTC | 2021-08-10 06:21:55 UTC |
++----+--------+-------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :009 > Blog.create(name:"Blog 2", description:"Dope Blog")
+   (0.2ms)  begin transaction
+  SQL (3.7ms)  INSERT INTO "blogs" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Blog 2"], ["description", "Dope Blog"], ["created_at", "2021-08-10 06:22:24.779653"], ["updated_at", "2021-08-10 06:22:24.779653"]]
+   (6.2ms)  commit transaction
++----+--------+-------------+-------------------------+-------------------------+
+| id | name   | description | created_at              | updated_at              |
++----+--------+-------------+-------------------------+-------------------------+
+| 2  | Blog 2 | Dope Blog   | 2021-08-10 06:22:24 UTC | 2021-08-10 06:22:24 UTC |
++----+--------+-------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :010 > Blog.create(name:"Blog 3", description:"Amazing Blog")
+   (0.5ms)  begin transaction
+  SQL (13.1ms)  INSERT INTO "blogs" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Blog 3"], ["description", "Amazing Blog"], ["created_at", "2021-08-10 06:22:50.859287"], ["updated_at", "2021-08-10 06:22:50.859287"]]
+   (15.3ms)  commit transaction
++----+--------+--------------+-------------------------+-------------------------+
+| id | name   | description  | created_at              | updated_at              |
++----+--------+--------------+-------------------------+-------------------------+
+| 3  | Blog 3 | Amazing Blog | 2021-08-10 06:22:50 UTC | 2021-08-10 06:22:50 UTC |
++----+--------+--------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :011 > Blog.create(name:"Blog 4", description:"Very Blog")
+   (0.3ms)  begin transaction
+  SQL (24.0ms)  INSERT INTO "blogs" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Blog 4"], ["description", "Very Blog"], ["created_at", "2021-08-10 06:23:18.683777"], ["updated_at", "2021-08-10 06:23:18.683777"]]
+   (7.8ms)  commit transaction
++----+--------+-------------+-------------------------+-------------------------+
+| id | name   | description | created_at              | updated_at              |
++----+--------+-------------+-------------------------+-------------------------+
+| 4  | Blog 4 | Very Blog   | 2021-08-10 06:23:18 UTC | 2021-08-10 06:23:18 UTC |
++----+--------+-------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :012 > Blog.create(name:"Blog 5", description:"Interesting blog")
+   (0.1ms)  begin transaction
+  SQL (5.5ms)  INSERT INTO "blogs" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Blog 5"], ["description", "Interesting blog"], 
+["created_at", "2021-08-10 06:23:44.287218"], ["updated_at", "2021-08-10 06:23:44.287218"]]
+   (5.3ms)  commit transaction
++----+--------+------------------+-------------------------+-------------------------+
+| id | name   | description      | created_at              | updated_at              |
++----+--------+------------------+-------------------------+-------------------------+
+| 5  | Blog 5 | Interesting blog | 2021-08-10 06:23:44 UTC | 2021-08-10 06:23:44 UTC |
++----+--------+------------------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :013 > Blog.all
+  Blog Load (5.2ms)  SELECT "blogs".* FROM "blogs"
++----+--------+------------------+-------------------------+-------------------------+
+| id | name   | description      | created_at              | updated_at              |
++----+--------+------------------+-------------------------+-------------------------+
+| 1  | Blog 1 | Nice Blog        | 2021-08-10 06:21:55 UTC | 2021-08-10 06:21:55 UTC |
+| 2  | Blog 2 | Dope Blog        | 2021-08-10 06:22:24 UTC | 2021-08-10 06:22:24 UTC |
+| 3  | Blog 3 | Amazing Blog     | 2021-08-10 06:22:50 UTC | 2021-08-10 06:22:50 UTC |
+| 4  | Blog 4 | Very Blog        | 2021-08-10 06:23:18 UTC | 2021-08-10 06:23:18 UTC |
+| 5  | Blog 5 | Interesting blog | 2021-08-10 06:23:44 UTC | 2021-08-10 06:23:44 UTC |
++----+--------+------------------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :014 > Owner.create(user:User.first, blog:Blog.first)
+  User Load (1.9ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Blog Load (1.4ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.4ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["blog_id", 1], ["created_at", "2021-08-10 06:25:23.685319"], ["updated_at", "2021-08-10 06:25:23.685319"]]
+   (7.7ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 1  | 1       | 1       | 2021-08-10 06:25:23 UTC | 2021-08-10 06:25:23 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :015 > Owner.create(user: User.first, blog: Blog.second)
+  User Load (5.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Blog Load (5.5ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (30.9ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["blog_id", 2], ["created_at", "2021-08-10 06:26:43.204651"], ["updated_at", "2021-08-10 06:26:43.204651"]]
+   (16.9ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 2  | 1       | 2       | 2021-08-10 06:26:43 UTC | 2021-08-10 06:26:43 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :016 > Owner.create(user: User.first, blog: Blog.third)
+  User Load (5.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Blog Load (3.6ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (7.3ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["blog_id", 3], ["created_at", "2021-08-10 06:26:56.326034"], ["updated_at", "2021-08-10 06:26:56.326034"]]
+   (7.6ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 3  | 1       | 3       | 2021-08-10 06:26:56 UTC | 2021-08-10 06:26:56 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :017 > Owner.create(user: User.second, blog: Blog.fourth)
+  User Load (5.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  Blog Load (2.3ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 3
+   (0.1ms)  begin transaction
+  SQL (7.3ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 2], ["blog_id", 4], ["created_at", "2021-08-10 06:27:08.661315"], ["updated_at", "2021-08-10 06:27:08.661315"]]
+   (7.2ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 4  | 2       | 4       | 2021-08-10 06:27:08 UTC | 2021-08-10 06:27:08 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :018 > Owner.create(user: User.last, blog: Blog.fifth)
+  User Load (2.0ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  Blog Load (2.5ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 4
+   (0.1ms)  begin transaction
+  SQL (24.0ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 5], ["blog_id", 5], ["created_at", "2021-08-10 06:27:19.559379"], ["updated_at", "2021-08-10 06:27:19.559379"]]
+   (9.8ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 5  | 5       | 5       | 2021-08-10 06:27:19 UTC | 2021-08-10 06:27:19 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :019 > Blog.all.each { |blog| Owner.create(user: User.third, blog: blog) }
+  Blog Load (6.1ms)  SELECT "blogs".* FROM "blogs"
+  User Load (2.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (7.7ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 1], ["created_at", "2021-08-10 06:28:26.099154"], ["updated_at", "2021-08-10 06:28:26.099154"]]
+   (8.2ms)  commit transaction
+  User Load (2.0ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (7.5ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 2], ["created_at", "2021-08-10 06:28:26.121271"], ["updated_at", "2021-08-10 06:28:26.121271"]]
+   (7.1ms)  commit transaction
+  User Load (1.9ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (6.5ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 3], ["created_at", "2021-08-10 06:28:26.142483"], ["updated_at", "2021-08-10 06:28:26.142483"]]
+   (5.7ms)  commit transaction
+  User Load (4.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (4.5ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 4], ["created_at", "2021-08-10 06:28:26.164662"], ["updated_at", "2021-08-10 06:28:26.164662"]]
+   (7.1ms)  commit transaction
+  User Load (2.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (4.5ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 5], ["created_at", "2021-08-10 06:28:26.183886"], ["updated_at", "2021-08-10 06:28:26.183886"]]
+   (8.0ms)  commit transaction
++----+--------+------------------+-------------------------+-------------------------+
+| id | name   | description      | created_at              | updated_at              |
++----+--------+------------------+-------------------------+-------------------------+
+| 1  | Blog 1 | Nice Blog        | 2021-08-10 06:21:55 UTC | 2021-08-10 06:21:55 UTC |
+| 2  | Blog 2 | Dope Blog        | 2021-08-10 06:22:24 UTC | 2021-08-10 06:22:24 UTC |
+| 3  | Blog 3 | Amazing Blog     | 2021-08-10 06:22:50 UTC | 2021-08-10 06:22:50 UTC |
+| 4  | Blog 4 | Very Blog        | 2021-08-10 06:23:18 UTC | 2021-08-10 06:23:18 UTC |
+| 5  | Blog 5 | Interesting blog | 2021-08-10 06:23:44 UTC | 2021-08-10 06:23:44 UTC |
++----+--------+------------------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :020 > Owner.create(user:User.third, blog:Blog.first)
+  User Load (5.4ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (2.0ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (6.0ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 1], ["created_at", "2021-08-10 06:30:38.869184"], ["updated_at", "2021-08-10 06:30:38.869184"]]
+   (9.7ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 11 | 3       | 1       | 2021-08-10 06:30:38 UTC | 2021-08-10 06:30:38 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :021 > Owner.create(user:User.third, blog:Blog.second)
+  User Load (1.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (1.3ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (7.9ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 2], ["created_at", "2021-08-10 06:35:07.829085"], ["updated_at", "2021-08-10 06:35:07.829085"]]
+   (6.9ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 12 | 3       | 2       | 2021-08-10 06:35:07 UTC | 2021-08-10 06:35:07 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :022 > Owner.create(user:User.third, blog:Blog.third)
+  User Load (5.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (3.7ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (7.0ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 3], ["created_at", "2021-08-10 06:39:35.381707"], ["updated_at", "2021-08-10 06:39:35.381707"]]
+   (8.4ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 13 | 3       | 3       | 2021-08-10 06:39:35 UTC | 2021-08-10 06:39:35 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :023 > Owner.create(user:User.third, blog:Blog.fourth)
+  User Load (1.8ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (2.3ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 3
+   (0.1ms)  begin transaction
+  SQL (6.9ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 4], ["created_at", "2021-08-10 06:39:44.063282"], ["updated_at", "2021-08-10 06:39:44.063282"]]
+   (7.1ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 14 | 3       | 4       | 2021-08-10 06:39:44 UTC | 2021-08-10 06:39:44 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :024 > Owner.create(user:User.third, blog:Blog.fifth)
+  User Load (1.4ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (1.7ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 4
+   (0.1ms)  begin transaction
+  SQL (6.4ms)  INSERT INTO "owners" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 3], ["blog_id", 5], ["created_at", "2021-08-10 06:39:55.725241"], ["updated_at", "2021-08-10 06:39:55.725241"]]
+   (6.8ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 15 | 3       | 5       | 2021-08-10 06:39:55 UTC | 2021-08-10 06:39:55 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :025 >  Post.create(title:"Blog 2 fam", content:"Bloooooooge is good.", user:User.first, blog:Blog.second)
+  User Load (1.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Blog Load (1.6ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (22.5ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blog 2 fam"], ["content", "Bloooooooge is good."], ["user_id", 1], ["blog_id", 2], ["created_at", "2021-08-10 06:42:51.486879"], ["updated_at", "2021-08-10 06:42:51.486879"]]
+   (8.2ms)  commit transaction
++----+------------+----------------------+---------+---------+-------------------------+-------------------------+
+| id | title      | content              | user_id | blog_id | created_at              | updated_at              |
++----+------------+----------------------+---------+---------+-------------------------+-------------------------+
+| 1  | Blog 2 fam | Bloooooooge is good. | 1       | 2       | 2021-08-10 06:42:51 UTC | 2021-08-10 06:42:51 UTC |
++----+------------+----------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :026 >  Post.create(title:"Blog Lig Goood", content:"Blog jameeee.", user:User.first, blog:Blog.second)
+  User Load (3.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Blog Load (2.1ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (4.1ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blog Lig Goood"], ["content", "Blog jameeee."], ["user_id", 1], ["blog_id", 2], ["created_at", "2021-08-10 06:43:27.306901"], ["updated_at", "2021-08-10 06:43:27.306901"]]
+   (6.5ms)  commit transaction
++----+----------------+---------------+---------+---------+-------------------------+-------------------------+
+| id | title          | content       | user_id | blog_id | created_at              | updated_at              |
++----+----------------+---------------+---------+---------+-------------------------+-------------------------+
+| 2  | Blog Lig Goood | Blog jameeee. | 1       | 2       | 2021-08-10 06:43:27 UTC | 2021-08-10 06:43:27 UTC |
++----+----------------+---------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :027 >  Post.create(title:"Blog no Vlog", content:"Blog me pleasee.", user:User.first, blog:Blog.second)
+  User Load (2.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Blog Load (1.9ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (3.9ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blog no Vlog"], ["content", "Blog me pleasee."], ["user_id", 1], ["blog_id", 2], ["created_at", "2021-08-10 06:44:20.826433"], ["updated_at", "2021-08-10 06:44:20.826433"]]
+   (7.8ms)  commit transaction
++----+--------------+------------------+---------+---------+-------------------------+-------------------------+
+| id | title        | content          | user_id | blog_id | created_at              | updated_at              |
++----+--------------+------------------+---------+---------+-------------------------+-------------------------+
+| 3  | Blog no Vlog | Blog me pleasee. | 1       | 2       | 2021-08-10 06:44:20 UTC | 2021-08-10 06:44:20 UTC |
++----+--------------+------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :028 > Post.create(title:"PS5 sell?", content:"Ps5 is hard to get", user:User.second, blog:Blog.last)
+  User Load (3.4ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  Blog Load (1.6ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (6.4ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "PS5 sell?"], ["content", "Ps5 is hard to get"], ["user_id", 2], ["blog_id", 5], ["created_at", "2021-08-10 06:46:35.937856"], ["updated_at", "2021-08-10 06:46:35.937856"]]
+   (7.5ms)  commit transaction
++----+-----------+--------------------+---------+---------+-------------------------+-------------------------+
+| id | title     | content            | user_id | blog_id | created_at              | updated_at              |
++----+-----------+--------------------+---------+---------+-------------------------+-------------------------+
+| 4  | PS5 sell? | Ps5 is hard to get | 2       | 5       | 2021-08-10 06:46:35 UTC | 2021-08-10 06:46:35 UTC |
++----+-----------+--------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :029 > Post.create(title:"Xbox sell?", content:"Xbox1 is hard to get", user:User.second, blog:Blog.last)
+  User Load (1.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  Blog Load (5.0ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.6ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Xbox sell?"], ["content", "Xbox1 is hard to get"], ["user_id", 2], ["blog_id", 5], ["created_at", "2021-08-10 06:47:12.593804"], ["updated_at", "2021-08-10 06:47:12.593804"]]
+   (8.4ms)  commit transaction
++----+------------+----------------------+---------+---------+-------------------------+-------------------------+
+| id | title      | content              | user_id | blog_id | created_at              | updated_at              |
++----+------------+----------------------+---------+---------+-------------------------+-------------------------+
+| 5  | Xbox sell? | Xbox1 is hard to get | 2       | 5       | 2021-08-10 06:47:12 UTC | 2021-08-10 06:47:12 UTC |
++----+------------+----------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :030 > Post.create(title:"PS5 abd Xboxl?", content:"Ps5 vs Xbox", user:User.second, blog:Blog.last)
+  User Load (5.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  Blog Load (3.4ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (23.1ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "PS5 abd Xboxl?"], ["content", "Ps5 vs Xbox"], ["user_id", 2], ["blog_id", 5], ["created_at", "2021-08-10 06:48:16.103537"], ["updated_at", "2021-08-10 06:48:16.103537"]]
+   (6.7ms)  commit transaction
++----+----------------+-------------+---------+---------+-------------------------+-------------------------+
+| id | title          | content     | user_id | blog_id | created_at              | updated_at              |
++----+----------------+-------------+---------+---------+-------------------------+-------------------------+
+| 6  | PS5 abd Xboxl? | Ps5 vs Xbox | 2       | 5       | 2021-08-10 06:48:16 UTC | 2021-08-10 06:48:16 UTC |
++----+----------------+-------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :031 > Post.create(title:"Messi?", content:"Messi to Psg", user:User.second, blog:Blog.last)
+  User Load (5.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  Blog Load (2.5ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.1ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Messi?"], ["content", "Messi to Psg"], ["user_id", 2], ["blog_id", 5], ["created_at", "2021-08-10 06:48:47.110204"], ["updated_at", "2021-08-10 06:48:47.110204"]]
+   (7.0ms)  commit transaction
++----+--------+--------------+---------+---------+-------------------------+-------------------------+
+| id | title  | content      | user_id | blog_id | created_at              | updated_at              |
++----+--------+--------------+---------+---------+-------------------------+-------------------------+
+| 7  | Messi? | Messi to Psg | 2       | 5       | 2021-08-10 06:48:47 UTC | 2021-08-10 06:48:47 UTC |
++----+--------+--------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :032 > Post.create(title:"God is love", content:"We need more love in this world.", user:User.second, blog:Blog.last)
+  User Load (2.2ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  Blog Load (5.0ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.9ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "God is love"], ["content", "We need more love in this world."], ["user_id", 2], ["blog_id", 5], ["created_at", "2021-08-10 06:50:04.012916"], ["updated_at", "2021-08-10 06:50:04.012916"]]   (7.6ms)  commit transaction
++----+-------------+----------------------------------+---------+---------+-------------------------+-------------------------+
+| id | title       | content                          | user_id | blog_id | created_at              | updated_at              |
++----+-------------+----------------------------------+---------+---------+-------------------------+-------------------------+
+| 8  | God is love | We need more love in this world. | 2       | 5       | 2021-08-10 06:50:04 UTC | 2021-08-10 06:50:04 UTC |
++----+-------------+----------------------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :033 > Post.create(title:"God is love", content:"need god in life", user:User.third, blog:Blog.first)
+  User Load (5.4ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (1.6ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.1ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "God is love"], ["content", "need god in life"], ["user_id", 3], ["blog_id", 1], ["created_at", "2021-08-10 06:51:10.861228"], ["updated_at", "2021-08-10 06:51:10.861228"]]
+   (5.9ms)  commit transaction
++----+-------------+------------------+---------+---------+-------------------------+-------------------------+
+| id | title       | content          | user_id | blog_id | created_at              | updated_at              |
++----+-------------+------------------+---------+---------+-------------------------+-------------------------+
+| 9  | God is love | need god in life | 3       | 1       | 2021-08-10 06:51:10 UTC | 2021-08-10 06:51:10 UTC |
++----+-------------+------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :034 > Post.create(title:"God is power", content:"We will all be loved.", user:User.third, blog:Blog.second)
+  User Load (3.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (4.3ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.2ms)  begin transaction
+  SQL (22.4ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "God is power"], ["content", "We will all be loved."], ["user_id", 3], ["blog_id", 2], ["created_at", "2021-08-10 06:53:17.564184"], ["updated_at", "2021-08-10 06:53:17.564184"]]
+   (9.3ms)  commit transaction
++----+--------------+-----------------------+---------+---------+-------------------------+-------------------------+
+| id | title        | content               | user_id | blog_id | created_at              | updated_at              |
++----+--------------+-----------------------+---------+---------+-------------------------+-------------------------+
+| 10 | God is power | We will all be loved. | 3       | 2       | 2021-08-10 06:53:17 UTC | 2021-08-10 06:53:17 UTC |
++----+--------------+-----------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :035 > Post.create(title:"Blaah", content:"I am the love", user:User.third, blog:Blog.third)
+  User Load (3.9ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (1.6ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 2
+   (0.0ms)  begin transaction
+  SQL (8.4ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blaah"], ["content", 
+"I am the love"], ["user_id", 3], ["blog_id", 3], ["created_at", "2021-08-10 06:54:08.907037"], ["updated_at", "2021-08-10 06:54:08.907037"]]
+   (9.8ms)  commit transaction
++----+-------+---------------+---------+---------+-------------------------+-------------------------+
+| id | title | content       | user_id | blog_id | created_at              | updated_at              |
++----+-------+---------------+---------+---------+-------------------------+-------------------------+
+| 11 | Blaah | I am the love | 3       | 3       | 2021-08-10 06:54:08 UTC | 2021-08-10 06:54:08 UTC |
++----+-------+---------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :036 > Post.create(title:"Blaaaa Blaaa", content:"I read Blaaaaa", user:User.third, blog:Blog.fourth)
+  User Load (5.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (5.9ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 3
+   (0.1ms)  begin transaction
+  SQL (4.7ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blaaaa Blaaa"], ["content", "I read Blaaaaa"], ["user_id", 3], ["blog_id", 4], ["created_at", "2021-08-10 06:56:08.113776"], ["updated_at", "2021-08-10 06:56:08.113776"]]
+   (6.6ms)  commit transaction
++----+--------------+----------------+---------+---------+-------------------------+-------------------------+
+| id | title        | content        | user_id | blog_id | created_at              | updated_at              |
++----+--------------+----------------+---------+---------+-------------------------+-------------------------+
+| 12 | Blaaaa Blaaa | I read Blaaaaa | 3       | 4       | 2021-08-10 06:56:08 UTC | 2021-08-10 06:56:08 UTC |
++----+--------------+----------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :037 > Post.create(title:"Blaaaaat", content:"pr pr r pr", user:User.third, blog:Blog.fifth)
+  User Load (1.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Blog Load (1.3ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 4
+   (0.1ms)  begin transaction
+  SQL (6.5ms)  INSERT INTO "posts" ("title", "content", "user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Blaaaaat"], ["content", "pr pr r pr"], ["user_id", 3], ["blog_id", 5], ["created_at", "2021-08-10 06:58:14.133539"], ["updated_at", "2021-08-10 06:58:14.133539"]]
+   (6.9ms)  commit transaction
++----+----------+------------+---------+---------+-------------------------+-------------------------+
+| id | title    | content    | user_id | blog_id | created_at              | updated_at              |
++----+----------+------------+---------+---------+-------------------------+-------------------------+
+| 13 | Blaaaaat | pr pr r pr | 3       | 5       | 2021-08-10 06:58:14 UTC | 2021-08-10 06:58:14 UTC |
++----+----------+------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :038 > Message.create(author:"User 3", message:"Brrrrr brrr", user:User.third, post:Post.first)
+  User Load (1.9ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Post Load (1.6ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (17.2ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 3"], ["message", "Brrrrr brrr"], ["user_id", 3], ["post_id", 1], ["created_at", "2021-08-10 06:59:50.745611"], ["updated_at", "2021-08-10 06:59:50.745611"]]
+   (5.9ms)  commit transaction
++----+--------+-------------+---------+---------+-------------------------+-------------------------+
+| id | author | message     | user_id | post_id | created_at              | updated_at              |
++----+--------+-------------+---------+---------+-------------------------+-------------------------+
+| 1  | User 3 | Brrrrr brrr | 3       | 1       | 2021-08-10 06:59:50 UTC | 2021-08-10 06:59:50 UTC |
++----+--------+-------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :039 > Message.create(author:"User 3", message:"sssss ssll", user:User.third, post:Post.first)
+  User Load (5.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Post Load (3.8ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (6.5ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 3"], ["message", "sssss ssll"], ["user_id", 3], ["post_id", 1], ["created_at", "2021-08-10 07:00:54.776740"], ["updated_at", "2021-08-10 07:00:54.776740"]]
+   (6.9ms)  commit transaction
++----+--------+------------+---------+---------+-------------------------+-------------------------+
+| id | author | message    | user_id | post_id | created_at              | updated_at              |
++----+--------+------------+---------+---------+-------------------------+-------------------------+
+| 2  | User 3 | sssss ssll | 3       | 1       | 2021-08-10 07:00:54 UTC | 2021-08-10 07:00:54 UTC |
++----+--------+------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :040 > Message.create(author:"User 3", message:"Y25", user:User.third, post:Post.second)
+  User Load (1.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Post Load (1.3ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (6.8ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 3"], ["message", "Y25"], ["user_id", 3], ["post_id", 2], ["created_at", "2021-08-10 07:02:48.150665"], ["updated_at", "2021-08-10 07:02:48.150665"]]
+   (7.0ms)  commit transaction
++----+--------+---------+---------+---------+-------------------------+-------------------------+
+| id | author | message | user_id | post_id | created_at              | updated_at              |
++----+--------+---------+---------+---------+-------------------------+-------------------------+
+| 3  | User 3 | Y25     | 3       | 2       | 2021-08-10 07:02:48 UTC | 2021-08-10 07:02:48 UTC |
++----+--------+---------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :041 > Message.create(author:"User 3", message:"dodge char", user:User.third, post:Post.second)
+  User Load (2.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Post Load (1.4ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (22.7ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 3"], ["message", "dodge char"], ["user_id", 3], ["post_id", 2], ["created_at", "2021-08-10 07:03:31.976553"], ["updated_at", "2021-08-10 07:03:31.976553"]]
+   (9.1ms)  commit transaction
++----+--------+------------+---------+---------+-------------------------+-------------------------+
+| id | author | message    | user_id | post_id | created_at              | updated_at              |
++----+--------+------------+---------+---------+-------------------------+-------------------------+
+| 4  | User 3 | dodge char | 3       | 2       | 2021-08-10 07:03:31 UTC | 2021-08-10 07:03:31 UTC |
++----+--------+------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :042 > Message.create(author:"User 3", message:"know me Isssll", user:User.third, post:Post.second)
+  User Load (5.8ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  Post Load (6.5ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (9.5ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 3"], ["message", "know me Isssll"], ["user_id", 3], ["post_id", 2], ["created_at", "2021-08-10 07:04:25.717237"], ["updated_at", "2021-08-10 07:04:25.717237"]]
+   (8.2ms)  commit transaction
++----+--------+----------------+---------+---------+-------------------------+-------------------------+
+| id | author | message        | user_id | post_id | created_at              | updated_at              |
++----+--------+----------------+---------+---------+-------------------------+-------------------------+
+| 5  | User 3 | know me Isssll | 3       | 2       | 2021-08-10 07:04:25 UTC | 2021-08-10 07:04:25 UTC |
++----+--------+----------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :043 > Message.create(author:"User 4", message:"I red me.", user:User.fourth, post:Post.last)
+  User Load (2.7ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 3
+  Post Load (1.2ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (6.5ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 4"], ["message", "I red me."], ["user_id", 4], ["post_id", 13], ["created_at", "2021-08-10 07:05:16.562685"], ["updated_at", "2021-08-10 07:05:16.562685"]]
+   (7.3ms)  commit transaction
++----+--------+-----------+---------+---------+-------------------------+-------------------------+
+| id | author | message   | user_id | post_id | created_at              | updated_at              |
++----+--------+-----------+---------+---------+-------------------------+-------------------------+
+| 6  | User 4 | I red me. | 4       | 13      | 2021-08-10 07:05:16 UTC | 2021-08-10 07:05:16 UTC |
++----+--------+-----------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :044 > Message.create(author:"User 4", message:"I blew my cover.", user:User.fourth, post:Post.last)
+  User Load (1.8ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 3
+  Post Load (1.7ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (5.5ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 4"], ["message", "I blew my cover."], ["user_id", 4], ["post_id", 13], ["created_at", "2021-08-10 07:05:56.504662"], ["updated_at", "2021-08-10 07:05:56.504662"]]
+   (5.5ms)  commit transaction
++----+--------+------------------+---------+---------+-------------------------+-------------------------+
+| id | author | message          | user_id | post_id | created_at              | updated_at              |
++----+--------+------------------+---------+---------+-------------------------+-------------------------+
+| 7  | User 4 | I blew my cover. | 4       | 13      | 2021-08-10 07:05:56 UTC | 2021-08-10 07:05:56 UTC |
++----+--------+------------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :045 > Message.create(author:"User 4", message:"I'm low.", user:User.fourth, post:Post.last)
+  User Load (3.5ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 3
+  Post Load (2.0ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (6.5ms)  INSERT INTO "messages" ("author", "message", "user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", "User 4"], ["message", "I'm low."], ["user_id", 4], ["post_id", 13], ["created_at", "2021-08-10 07:06:15.922676"], ["updated_at", "2021-08-10 07:06:15.922676"]]
+   (6.4ms)  commit transaction
++----+--------+----------+---------+---------+-------------------------+-------------------------+
+| id | author | message  | user_id | post_id | created_at              | updated_at              |
++----+--------+----------+---------+---------+-------------------------+-------------------------+
+| 8  | User 4 | I'm low. | 4       | 13      | 2021-08-10 07:06:15 UTC | 2021-08-10 07:06:15 UTC |
++----+--------+----------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :046 > p = Post.second
+  Post Load (5.5ms)  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1 OFFSET 1
++----+----------------+---------------+---------+---------+-------------------------+-------------------------+
+| id | title          | content       | user_id | blog_id | created_at              | updated_at              |
++----+----------------+---------------+---------+---------+-------------------------+-------------------------+
+| 2  | Blog Lig Goood | Blog jameeee. | 1       | 2       | 2021-08-10 06:43:27 UTC | 2021-08-10 06:43:27 UTC |
++----+----------------+---------------+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :048 > p.update(user:User.last)
+  User Load (5.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (3.0ms)  UPDATE "posts" SET "user_id" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["user_id", 5], ["updated_at", "2021-08-10 07:07:56.731498"], ["id", 2]]
+   (7.7ms)  commit transaction
+ => true
+2.3.1 :049 > p.save
+   (0.1ms)  begin transaction
+   (0.2ms)  commit transaction
+ => true
+2.3.1 :050 > p.update(content:"Post Deleted")
+2.3.1 :002 > User.find(3).blogs
+  User Load (1.0ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Blog Load (1.7ms)  SELECT "blogs".* FROM "blogs" INNER JOIN "owners" ON "blogs"."id" = "owners"."blog_id" WHERE "owners"."user_id" = ?  [["user_id", 3]]
++----+--------+------------------+-------------------------+-------------------------+
+| id | name   | description      | created_at              | updated_at              |
++----+--------+------------------+-------------------------+-------------------------+
+| 1  | Blog 1 | Nice Blog        | 2021-08-10 06:21:55 UTC | 2021-08-10 06:21:55 UTC |
+| 2  | Blog 2 | Dope Blog        | 2021-08-10 06:22:24 UTC | 2021-08-10 06:22:24 UTC |
+| 3  | Blog 3 | Amazing Blog     | 2021-08-10 06:22:50 UTC | 2021-08-10 06:22:50 UTC |
+| 4  | Blog 4 | Very Blog        | 2021-08-10 06:23:18 UTC | 2021-08-10 06:23:18 UTC |
+| 5  | Blog 5 | Interesting blog | 2021-08-10 06:23:44 UTC | 2021-08-10 06:23:44 UTC |
+| 1  | Blog 1 | Nice Blog        | 2021-08-10 06:21:55 UTC | 2021-08-10 06:21:55 UTC |
+| 2  | Blog 2 | Dope Blog        | 2021-08-10 06:22:24 UTC | 2021-08-10 06:22:24 UTC |
+| 3  | Blog 3 | Amazing Blog     | 2021-08-10 06:22:50 UTC | 2021-08-10 06:22:50 UTC |
+| 4  | Blog 4 | Very Blog        | 2021-08-10 06:23:18 UTC | 2021-08-10 06:23:18 UTC |
+| 5  | Blog 5 | Interesting blog | 2021-08-10 06:23:44 UTC | 2021-08-10 06:23:44 UTC |
++----+--------+------------------+-------------------------+-------------------------+
+10 rows in set
+2.3.1 :003 > User.find(3).messages
+  User Load (5.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Message Load (2.0ms)  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [["user_id", 3]]
++----+--------+----------------+---------+---------+-------------------------+-------------------------+
+| id | author | message        | user_id | post_id | created_at              | updated_at              |
++----+--------+----------------+---------+---------+-------------------------+-------------------------+
+| 1  | User 3 | Brrrrr brrr    | 3       | 1       | 2021-08-10 06:59:50 UTC | 2021-08-10 06:59:50 UTC |
+| 2  | User 3 | sssss ssll     | 3       | 1       | 2021-08-10 07:00:54 UTC | 2021-08-10 07:00:54 UTC |
+| 3  | User 3 | Y25            | 3       | 2       | 2021-08-10 07:02:48 UTC | 2021-08-10 07:02:48 UTC |
+| 4  | User 3 | dodge char     | 3       | 2       | 2021-08-10 07:03:31 UTC | 2021-08-10 07:03:31 UTC |
+| 5  | User 3 | know me Isssll | 3       | 2       | 2021-08-10 07:04:25 UTC | 2021-08-10 07:04:25 UTC |
++----+--------+----------------+---------+---------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :004 > User.find(3).posts
+  User Load (5.6ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Post Load (1.1ms)  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 3]]
++----+--------------+-----------------------+---------+---------+-------------------------+-------------------------+
+| id | title        | content               | user_id | blog_id | created_at              | updated_at              |
++----+--------------+-----------------------+---------+---------+-------------------------+-------------------------+
+| 9  | God is love  | need god in life      | 3       | 1       | 2021-08-10 06:51:10 UTC | 2021-08-10 06:51:10 UTC |
+| 10 | God is power | We will all be loved. | 3       | 2       | 2021-08-10 06:53:17 UTC | 2021-08-10 06:53:17 UTC |
+| 11 | Blaah        | I am the love         | 3       | 3       | 2021-08-10 06:54:08 UTC | 2021-08-10 06:54:08 UTC |
+| 12 | Blaaaa Blaaa | I read Blaaaaa        | 3       | 4       | 2021-08-10 06:56:08 UTC | 2021-08-10 06:56:08 UTC |
+| 13 | Blaaaaat     | pr pr r pr            | 3       | 5       | 2021-08-10 06:58:14 UTC | 2021-08-10 06:58:14 UTC |
++----+--------------+-----------------------+---------+---------+-------------------------+-------------------------+
+5 rows in set
+2.3.1 :005 > Blog.fifth.posts
+  Blog Load (6.3ms)  SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 4
+  Post Load (1.7ms)  SELECT "posts".* FROM "posts" WHERE "posts"."blog_id" = ?  [["blog_id", 5]]
++----+----------------+----------------------------------+---------+---------+-------------------------+-------------------------+
+| id | title          | content                          | user_id | blog_id | created_at              | updated_at              |
++----+----------------+----------------------------------+---------+---------+-------------------------+-------------------------+
+| 4  | PS5 sell?      | Ps5 is hard to get               | 2       | 5       | 2021-08-10 06:46:35 UTC | 2021-08-10 06:46:35 UTC |
+| 5  | Xbox sell?     | Xbox1 is hard to get             | 2       | 5       | 2021-08-10 06:47:12 UTC | 2021-08-10 06:47:12 UTC |
+| 6  | PS5 abd Xboxl? | Ps5 vs Xbox                      | 2       | 5       | 2021-08-10 06:48:16 UTC | 2021-08-10 06:48:16 UTC |
+| 7  | Messi?         | Messi to Psg                     | 2       | 5       | 2021-08-10 06:48:47 UTC | 2021-08-10 06:48:47 UTC |
+| 8  | God is love    | We need more love in this world. | 2       | 5       | 2021-08-10 06:50:04 UTC | 2021-08-10 06:50:04 UTC |
+| 13 | Blaaaaat       | pr pr r pr                       | 3       | 5       | 2021-08-10 06:58:14 UTC | 2021-08-10 06:58:14 UTC |
++----+----------------+----------------------------------+---------+---------+-------------------------+-------------------------+
+6 rows in set
+2.3.1 :013 > Owner.all
+  Owner Load (7.7ms)  SELECT "owners".* FROM "owners"
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 1  | 1       | 1       | 2021-08-10 06:25:23 UTC | 2021-08-10 06:25:23 UTC |
+| 2  | 1       | 2       | 2021-08-10 06:26:43 UTC | 2021-08-10 06:26:43 UTC |
+| 3  | 1       | 3       | 2021-08-10 06:26:56 UTC | 2021-08-10 06:26:56 UTC |
+| 4  | 2       | 4       | 2021-08-10 06:27:08 UTC | 2021-08-10 06:27:08 UTC |
+| 5  | 5       | 5       | 2021-08-10 06:27:19 UTC | 2021-08-10 06:27:19 UTC |
+| 6  | 3       | 1       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 7  | 3       | 2       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 8  | 3       | 3       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 9  | 3       | 4       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 10 | 3       | 5       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 11 | 3       | 1       | 2021-08-10 06:30:38 UTC | 2021-08-10 06:30:38 UTC |
+| 12 | 3       | 2       | 2021-08-10 06:35:07 UTC | 2021-08-10 06:35:07 UTC |
+| 13 | 3       | 3       | 2021-08-10 06:39:35 UTC | 2021-08-10 06:39:35 UTC |
+| 14 | 3       | 4       | 2021-08-10 06:39:44 UTC | 2021-08-10 06:39:44 UTC |
+| 15 | 3       | 5       | 2021-08-10 06:39:55 UTC | 2021-08-10 06:39:55 UTC |
++----+---------+---------+-------------------------+-------------------------+
+15 rows in set
+2.3.1 :014 > Owner.first.destroy
+  Owner Load (5.5ms)  SELECT  "owners".* FROM "owners"  ORDER BY "owners"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (13.7ms)  DELETE FROM "owners" WHERE "owners"."id" = ?  [["id", 1]]
+   (22.7ms)  commit transaction
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 1  | 1       | 1       | 2021-08-10 06:25:23 UTC | 2021-08-10 06:25:23 UTC |
++----+---------+---------+-------------------------+-------------------------+
+1 row in set
+2.3.1 :015 > Owner.all
+  Owner Load (5.4ms)  SELECT "owners".* FROM "owners"
++----+---------+---------+-------------------------+-------------------------+
+| id | user_id | blog_id | created_at              | updated_at              |
++----+---------+---------+-------------------------+-------------------------+
+| 2  | 1       | 2       | 2021-08-10 06:26:43 UTC | 2021-08-10 06:26:43 UTC |
+| 3  | 1       | 3       | 2021-08-10 06:26:56 UTC | 2021-08-10 06:26:56 UTC |
+| 4  | 2       | 4       | 2021-08-10 06:27:08 UTC | 2021-08-10 06:27:08 UTC |
+| 5  | 5       | 5       | 2021-08-10 06:27:19 UTC | 2021-08-10 06:27:19 UTC |
+| 6  | 3       | 1       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 7  | 3       | 2       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 8  | 3       | 3       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 9  | 3       | 4       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 10 | 3       | 5       | 2021-08-10 06:28:26 UTC | 2021-08-10 06:28:26 UTC |
+| 11 | 3       | 1       | 2021-08-10 06:30:38 UTC | 2021-08-10 06:30:38 UTC |
+| 12 | 3       | 2       | 2021-08-10 06:35:07 UTC | 2021-08-10 06:35:07 UTC |
+| 13 | 3       | 3       | 2021-08-10 06:39:35 UTC | 2021-08-10 06:39:35 UTC |
+| 14 | 3       | 4       | 2021-08-10 06:39:44 UTC | 2021-08-10 06:39:44 UTC |
+| 15 | 3       | 5       | 2021-08-10 06:39:55 UTC | 2021-08-10 06:39:55 UTC |
++----+---------+---------+-------------------------+-------------------------+
+14 rows in set
+2.3.1 :016 >
