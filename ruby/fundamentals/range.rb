@@ -1,5 +1,5 @@
-x = (1..10)
-if x.include? (10)
+x = (1..15)
+if x.include? (13)
     puts ("yes")
 else 
     puts ("no")
