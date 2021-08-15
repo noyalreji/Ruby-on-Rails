@@ -18,7 +18,7 @@ end
 
 h = Human.new
 h1 = Human.new
-puts h.attack(h1)
-puts h.attack("dog")
+puts h.attack(man23)
+puts h.attack("Corona")
 
 puts h1.health 
