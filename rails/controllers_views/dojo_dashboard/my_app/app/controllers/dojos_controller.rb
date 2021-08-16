@@ -28,3 +28,6 @@ class DojosController < ApplicationController
     end
   end
 end
+
+
+
