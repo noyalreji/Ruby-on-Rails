@@ -24,7 +24,7 @@ class DojosController < ApplicationController
         redirect_to :root
     else 
         flash[:errors] = @dojo.errors.full_messages
-        redirect_to :back
+        redirect_to :back 
     end
   end
 end
