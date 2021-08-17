@@ -16,3 +16,4 @@ class SayController < ApplicationController
         redirect_to "/say/hello_joe"
     end
 end
+
