@@ -23,17 +23,15 @@ class DojosController < ApplicationController
 
   def show
     @dojo = Dojo.find(params[:id])
+    @students_by_dojo = Dojo.find(params[:id]).students
   end
 
-  # I tried with and without @ symbol
   def update
     dojo = Dojo.find(params[:id])
     dojo.update(dojo_params)
     dojo.save
-    # MUST HAVE IF STATEMENT or it will throw error if there is no error tp give a full message for
     puts dojo.errors.full_messages if dojo.errors
     redirect_to "/dojos"
-    # fail   <<<< Checks params being passed through
   end
 
   def destroy
